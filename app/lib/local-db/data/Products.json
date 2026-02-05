@@ -1,0 +1,568 @@
+[
+  {
+    "id": "prod_001",
+    "title": "Samsung 55\" QLED 4K Smart TV",
+    "shortDescription": "Experience stunning picture quality with Quantum Dot technology",
+    "description": "This Samsung QLED TV delivers vibrant colors and deep contrast with Quantum Dot technology. Features include 4K UHD resolution, HDR10+, smart TV capabilities with built-in streaming apps, and voice control compatibility.",
+    "price": 899.99,
+    "discountedPrice": 749.99,
+    "slug": "samsung-55-qled-4k-smart-tv",
+    "quantity": 25,
+    "updatedAt": "2026-02-01T10:30:00.000Z",
+    "reviews": 128,
+    "category": {
+      "title": "Televisions",
+      "slug": "televisions"
+    },
+    "productVariants": [
+      {
+        "color": "Titan Gray",
+        "image": "/images/products/product-10-bg-1.png",
+        "size": "55 inch",
+        "isDefault": true
+      },
+      {
+        "color": "Titan Gray",
+        "image": "/images/products/product-10-bg-2.png",
+        "size": "65 inch",
+        "isDefault": false
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Screen Size",
+        "description": "55 inches"
+      },
+      {
+        "name": "Resolution",
+        "description": "4K UHD (3840 x 2160)"
+      },
+      {
+        "name": "Refresh Rate",
+        "description": "120Hz"
+      },
+      {
+        "name": "Smart Features",
+        "description": "Tizen OS, Built-in Alexa"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Display Technology",
+        "attributeValues": [
+          {
+            "id": "attr_001",
+            "title": "QLED"
+          }
+        ]
+      },
+      {
+        "attributeName": "Connectivity",
+        "attributeValues": [
+          {
+            "id": "attr_002",
+            "title": "HDMI 2.1"
+          },
+          {
+            "id": "attr_003",
+            "title": "WiFi 6"
+          },
+          {
+            "id": "attr_004",
+            "title": "Bluetooth 5.2"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Premium Viewing Experience</h2><p>Immerse yourself in brilliant color and contrast with Samsung's Quantum Dot technology. This QLED TV produces over a billion shades of color for incredibly lifelike images.</p><h3>Smart TV Features</h3><p>Access your favorite streaming services, control your smart home, and enjoy voice-activated controls all from your TV.</p>",
+    "tags": ["4K", "Smart TV", "QLED", "Samsung"],
+    "offers": ["Free Delivery", "2 Year Warranty", "30-Day Returns"],
+    "sku": "SAM-QLED-55-001"
+  },
+  {
+    "id": "prod_002",
+    "title": "MacBook Pro 14\" M4 Pro",
+    "shortDescription": "Supercharged for professionals with Apple M4 Pro chip",
+    "description": "The MacBook Pro 14-inch with M4 Pro chip delivers groundbreaking performance and battery life. Perfect for developers, designers, and content creators who need portable power.",
+    "price": 1999.99,
+    "discountedPrice": null,
+    "slug": "macbook-pro-14-m4-pro",
+    "quantity": 15,
+    "updatedAt": "2026-02-03T14:20:00.000Z",
+    "reviews": 89,
+    "category": {
+      "title": "Laptop & PC",
+      "slug": "laptops"
+    },
+    "productVariants": [
+      {
+        "color": "Space Black",
+        "image": "/images/products/product-4-bg-1.png",
+        "size": "14 inch",
+        "isDefault": true
+      },
+      {
+        "color": "Silver",
+        "image": "/images/products/product-4-bg-2.png",
+        "size": "14 inch",
+        "isDefault": false
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Processor",
+        "description": "Apple M4 Pro chip, 12-core CPU"
+      },
+      {
+        "name": "Memory",
+        "description": "18GB Unified Memory"
+      },
+      {
+        "name": "Storage",
+        "description": "512GB SSD"
+      },
+      {
+        "name": "Display",
+        "description": "14.2-inch Liquid Retina XDR display"
+      },
+      {
+        "name": "Battery Life",
+        "description": "Up to 18 hours"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "RAM",
+        "attributeValues": [
+          {
+            "id": "attr_005",
+            "title": "18GB"
+          },
+          {
+            "id": "attr_006",
+            "title": "36GB"
+          }
+        ]
+      },
+      {
+        "attributeName": "Storage",
+        "attributeValues": [
+          {
+            "id": "attr_007",
+            "title": "512GB"
+          },
+          {
+            "id": "attr_008",
+            "title": "1TB"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Pro Performance</h2><p>The M4 Pro chip delivers exceptional performance for coding, 3D rendering, and video editing. With up to 18 hours of battery life, work unplugged all day.</p><h3>Stunning Display</h3><p>The Liquid Retina XDR display features over 1000 nits of brightness and supports P3 wide color gamut.</p>",
+    "tags": ["MacBook", "Apple", "M4", "Professional", "Laptop"],
+    "offers": ["Free Engraving", "Education Discount Available"],
+    "sku": "APPLE-MBP14-M4PRO-001"
+  },
+  {
+    "id": "prod_003",
+    "title": "iPhone 16 Pro Max",
+    "shortDescription": "The ultimate iPhone with A18 Pro chip and advanced camera system",
+    "description": "iPhone 16 Pro Max features a stunning 6.9-inch Super Retina XDR display, the powerful A18 Pro chip, and a revolutionary camera system with 5x optical zoom.",
+    "price": 1199.99,
+    "discountedPrice": 1099.99,
+    "slug": "iphone-16-pro-max",
+    "quantity": 42,
+    "updatedAt": "2026-02-04T09:15:00.000Z",
+    "reviews": 256,
+    "category": {
+      "title": "Mobile & Tablets",
+      "slug": "mobile"
+    },
+    "productVariants": [
+      {
+        "color": "Titanium Black",
+        "image": "/images/products/product-2-bg-1.png",
+        "size": "256GB",
+        "isDefault": true
+      },
+      {
+        "color": "Titanium White",
+        "image": "/images/products/product-2-bg-2.png",
+        "size": "256GB",
+        "isDefault": false
+      },
+      {
+        "color": "Titanium Blue",
+        "image": "/images/products/product-2-bg-2.png",
+        "size": "256GB",
+        "isDefault": false
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Display",
+        "description": "6.9-inch Super Retina XDR with ProMotion"
+      },
+      {
+        "name": "Chip",
+        "description": "A18 Pro chip"
+      },
+      {
+        "name": "Camera",
+        "description": "Triple 48MP camera system"
+      },
+      {
+        "name": "Battery",
+        "description": "Up to 29 hours video playback"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Storage Capacity",
+        "attributeValues": [
+          {
+            "id": "attr_009",
+            "title": "256GB"
+          },
+          {
+            "id": "attr_010",
+            "title": "512GB"
+          },
+          {
+            "id": "attr_011",
+            "title": "1TB"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Most Advanced iPhone Ever</h2><p>The iPhone 16 Pro Max brings professional-level photography and videography to your pocket. Shoot in ProRAW and ProRes, and enjoy all-day battery life.</p>",
+    "tags": ["iPhone", "Apple", "Smartphone", "5G", "Pro"],
+    "offers": ["Trade-In Credit", "AppleCare+ Available", "Free Shipping"],
+    "sku": "APPLE-IP16PM-256-001"
+  },
+  {
+    "id": "prod_004",
+    "title": "PlayStation 5 Console",
+    "shortDescription": "Next-gen gaming with ultra-high speed SSD and ray tracing",
+    "description": "Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio.",
+    "price": 499.99,
+    "discountedPrice": 449.99,
+    "slug": "playstation-5-console",
+    "quantity": 18,
+    "updatedAt": "2026-02-02T16:45:00.000Z",
+    "reviews": 342,
+    "category": {
+      "title": "Games & Videos",
+      "slug": "games"
+    },
+    "productVariants": [
+      {
+        "color": "White",
+        "image": "/images/products/product-1-bg-1.png",
+        "size": "Standard Edition",
+        "isDefault": true
+      },
+      {
+        "color": "White",
+        "image": "/images/products/product-1-bg-2.png",
+        "size": "Digital Edition",
+        "isDefault": false
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "CPU",
+        "description": "AMD Zen 2, 8 cores @ 3.5GHz"
+      },
+      {
+        "name": "GPU",
+        "description": "AMD RDNA 2, 10.28 TFLOPs"
+      },
+      {
+        "name": "Storage",
+        "description": "825GB SSD"
+      },
+      {
+        "name": "Resolution",
+        "description": "Up to 8K output"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Edition",
+        "attributeValues": [
+          {
+            "id": "attr_012",
+            "title": "Standard"
+          },
+          {
+            "id": "attr_013",
+            "title": "Digital"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Incredible Games</h2><p>Discover a new generation of incredible PlayStation games. Experience lightning-fast loading, adaptive triggers, haptic feedback and 3D Audio technology.</p>",
+    "tags": ["PlayStation", "Gaming", "Console", "PS5", "Sony"],
+    "offers": ["Free Game Bundle", "Extended Warranty Available"],
+    "sku": "SONY-PS5-STD-001"
+  },
+  {
+    "id": "prod_005",
+    "title": "Dyson V15 Detect Cordless Vacuum",
+    "shortDescription": "Intelligent cordless vacuum with laser dust detection",
+    "description": "The Dyson V15 Detect reveals invisible dust with a laser and proves deep cleaning with scientific proof. Automatically adapts suction power based on floor type.",
+    "price": 649.99,
+    "discountedPrice": 579.99,
+    "slug": "dyson-v15-detect-cordless-vacuum",
+    "quantity": 31,
+    "updatedAt": "2026-01-30T11:20:00.000Z",
+    "reviews": 167,
+    "category": {
+      "title": "Home Appliances",
+      "slug": "appliances"
+    },
+    "productVariants": [
+      {
+        "color": "Yellow/Nickel",
+        "image": "/images/products/product-12-bg-2.png",
+        "size": "Standard",
+        "isDefault": true
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Runtime",
+        "description": "Up to 60 minutes"
+      },
+      {
+        "name": "Charge Time",
+        "description": "4.5 hours"
+      },
+      {
+        "name": "Bin Capacity",
+        "description": "0.77L"
+      },
+      {
+        "name": "Weight",
+        "description": "3.1 kg"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Features",
+        "attributeValues": [
+          {
+            "id": "attr_014",
+            "title": "Laser Detection"
+          },
+          {
+            "id": "attr_015",
+            "title": "Auto Mode"
+          },
+          {
+            "id": "attr_016",
+            "title": "HEPA Filtration"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Scientific Proof of Deep Clean</h2><p>The piezo sensor counts and measures the size of dust particles, automatically increasing suction when needed. The LCD screen shows real-time proof of a deep clean.</p>",
+    "tags": ["Dyson", "Vacuum", "Cordless", "Home Cleaning"],
+    "offers": ["Free Accessories Kit", "2 Year Guarantee"],
+    "sku": "DYSON-V15-001"
+  },
+  {
+    "id": "prod_006",
+    "title": "Apple Watch Ultra 2",
+    "shortDescription": "Rugged and capable smartwatch for extreme athletes",
+    "description": "The most rugged and capable Apple Watch. Features a 49mm titanium case, precision dual-frequency GPS, and up to 36 hours of battery life.",
+    "price": 799.99,
+    "discountedPrice": null,
+    "slug": "apple-watch-ultra-2",
+    "quantity": 27,
+    "updatedAt": "2026-02-03T13:10:00.000Z",
+    "reviews": 94,
+    "category": {
+      "title": "Watches",
+      "slug": "watches"
+    },
+    "productVariants": [
+      {
+        "color": "Natural Titanium",
+        "image": "/images/products/product-5-bg-1.png",
+        "size": "49mm",
+        "isDefault": true
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Case Size",
+        "description": "49mm"
+      },
+      {
+        "name": "Material",
+        "description": "Titanium"
+      },
+      {
+        "name": "Water Resistance",
+        "description": "100m / EN13319"
+      },
+      {
+        "name": "Battery Life",
+        "description": "Up to 36 hours"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Band Type",
+        "attributeValues": [
+          {
+            "id": "attr_017",
+            "title": "Alpine Loop"
+          },
+          {
+            "id": "attr_018",
+            "title": "Trail Loop"
+          },
+          {
+            "id": "attr_019",
+            "title": "Ocean Band"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Built for Adventure</h2><p>With a rugged titanium case, extra-long battery life, and specialized features for ocean sports, hiking, and more. The brightest Apple display ever at 3000 nits.</p>",
+    "tags": ["Apple Watch", "Smartwatch", "Fitness", "Ultra"],
+    "offers": ["Free Band Upgrade", "AppleCare+ Available"],
+    "sku": "APPLE-WATCH-ULTRA2-001"
+  },
+  {
+    "id": "prod_007",
+    "title": "Dell XPS 15 Laptop",
+    "shortDescription": "Premium 15.6\" laptop with Intel Core i7 and NVIDIA graphics",
+    "description": "The Dell XPS 15 combines powerful performance with a stunning InfinityEdge display. Perfect for creators and professionals who need both portability and power.",
+    "price": 1799.99,
+    "discountedPrice": 1599.99,
+    "slug": "dell-xps-15-laptop",
+    "quantity": 12,
+    "updatedAt": "2026-02-01T08:30:00.000Z",
+    "reviews": 73,
+    "category": {
+      "title": "Laptop & PC",
+      "slug": "laptops"
+    },
+    "productVariants": [
+      {
+        "color": "Platinum Silver",
+        "image": "/images/products/product-4-bg-1.png",
+        "size": "15.6 inch",
+        "isDefault": true
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Processor",
+        "description": "Intel Core i7-13700H"
+      },
+      {
+        "name": "Memory",
+        "description": "16GB DDR5"
+      },
+      {
+        "name": "Storage",
+        "description": "512GB NVMe SSD"
+      },
+      {
+        "name": "Graphics",
+        "description": "NVIDIA GeForce RTX 4050"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Display Options",
+        "attributeValues": [
+          {
+            "id": "attr_020",
+            "title": "FHD+"
+          },
+          {
+            "id": "attr_021",
+            "title": "4K OLED"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Create Without Limits</h2><p>The XPS 15 delivers desktop-class performance in a sleek, portable design. Edit 4K video, render 3D models, and multitask with ease.</p>",
+    "tags": ["Dell", "XPS", "Laptop", "Creator", "Professional"],
+    "offers": ["Student Discount", "Free Shipping"],
+    "sku": "DELL-XPS15-I7-001"
+  },
+  {
+    "id": "prod_008",
+    "title": "Samsung Galaxy Tab S9",
+    "shortDescription": "Premium Android tablet with S Pen included",
+    "description": "Galaxy Tab S9 offers a brilliant 11-inch display, powerful performance, and includes the S Pen for note-taking and creativity. Water-resistant design with all-day battery.",
+    "price": 799.99,
+    "discountedPrice": 699.99,
+    "slug": "samsung-galaxy-tab-s9",
+    "quantity": 35,
+    "updatedAt": "2026-02-02T15:00:00.000Z",
+    "reviews": 112,
+    "category": {
+      "title": "Mobile & Tablets",
+      "slug": "mobile"
+    },
+    "productVariants": [
+      {
+        "color": "Graphite",
+        "image": "/images/products/product-7-bg-1.png",
+        "size": "11 inch",
+        "isDefault": true
+      },
+      {
+        "color": "Beige",
+        "image": "/images/products/product-7-bg-2.png",
+        "size": "11 inch",
+        "isDefault": false
+      }
+    ],
+    "additionalInformation": [
+      {
+        "name": "Display",
+        "description": "11-inch Dynamic AMOLED 2X"
+      },
+      {
+        "name": "Processor",
+        "description": "Snapdragon 8 Gen 2"
+      },
+      {
+        "name": "Storage",
+        "description": "128GB"
+      },
+      {
+        "name": "Battery",
+        "description": "8,400 mAh"
+      }
+    ],
+    "customAttributes": [
+      {
+        "attributeName": "Storage",
+        "attributeValues": [
+          {
+            "id": "attr_022",
+            "title": "128GB"
+          },
+          {
+            "id": "attr_023",
+            "title": "256GB"
+          }
+        ]
+      }
+    ],
+    "body": "<h2>Work and Play</h2><p>Transform your tablet into a laptop with the Book Cover Keyboard. Water and dust resistant (IP68), perfect for any environment.</p>",
+    "tags": ["Samsung", "Tablet", "Android", "S Pen"],
+    "offers": ["Free Book Cover", "Samsung Care+ Available"],
+    "sku": "SAM-TABS9-128-001"
+  }
+]

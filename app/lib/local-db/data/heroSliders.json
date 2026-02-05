@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "sliderName": "Featured Deal",
+    "sliderImage": "/images/hero/slider-1.png",
+    "discountRate": 20,
+    "slug": "featured-deal-slider",
+    "productId": "prod_003",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "updatedAt": "2024-01-20T15:30:00.000Z",
+    "product": {
+      "price": 299.99,
+      "discountedPrice": 239.99,
+      "title": "Ultra HD 4K Monitor",
+      "slug": "ultra-hd-4k-monitor",
+      "shortDescription": "Experience stunning visuals with our premium 4K monitor"
+    }
+  },
+  {
+    "id": 2,
+    "sliderName": "Best Seller",
+    "sliderImage": "/images/hero/slider-2.png",
+    "discountRate": 15,
+    "slug": "best-seller-slider",
+    "productId": "prod_004",
+    "createdAt": "2024-01-16T10:00:00.000Z",
+    "updatedAt": "2024-01-21T15:30:00.000Z",
+    "product": {
+      "price": 199.99,
+      "discountedPrice": 169.99,
+      "title": "Mechanical Gaming Keyboard",
+      "slug": "mechanical-gaming-keyboard",
+      "shortDescription": "Premium mechanical switches for the ultimate gaming experience"
+    }
+  },
+  {
+    "id": 3,
+    "sliderName": "Limited Edition",
+    "sliderImage": "/images/hero/slider-3.png",
+    "discountRate": 25,
+    "slug": "limited-edition-slider",
+    "productId": "prod_005",
+    "createdAt": "2024-01-17T10:00:00.000Z",
+    "updatedAt": "2024-01-22T15:30:00.000Z",
+    "product": {
+      "price": 399.99,
+      "discountedPrice": 299.99,
+      "title": "Professional Graphics Tablet",
+      "slug": "professional-graphics-tablet",
+      "shortDescription": "Create stunning digital art with precision and control"
+    }
+  }
+]
