@@ -154,7 +154,7 @@ export default function ShopSidebar({ categories, totalProducts }: Props) {
                         {colors.map((color) => (
                             <button
                                 key={color.name}
-                                className={`w-10 h-10 rounded-full border-2 border-gray-3 hover:border-blue transition ${
+                                className={`w-7 h-7 rounded-full border-2 border-gray-3 hover:border-green-bright transition ${
                                     color.border ? "border-gray-3" : ""
                                 }`}
                                 style={{ backgroundColor: color.hex }}

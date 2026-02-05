@@ -111,7 +111,7 @@ const ProductItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
               Out of Stock
             </span>
                     ) : item?.discountedPrice && item?.discountedPrice > 0 ? (
-                        <span className="px-2 py-1 text-xs font-medium text-white rounded-full bg-blue">
+                        <span className="px-2 py-1 text-xs font-medium text-white rounded-full bg-green-bright">
               {calculateDiscountPercentage(item.discountedPrice, item.price)}%
               OFF
             </span>
@@ -121,7 +121,7 @@ const ProductItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
                 <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
                     <Tooltip content="Quick View" placement="top">
                         <button
-                            className="border border-gray-3 h-[38px] w-[38px] rounded-lg flex items-center justify-center text-dark bg-white hover:text-blue"
+                            className="border border-gray-3 h-[38px] w-[38px] rounded-lg flex items-center justify-center text-dark-6 bg-white hover:text-green-bright"
                             onClick={() => {
                                 openModal();
                                 handleQuickViewUpdate();
@@ -137,7 +137,7 @@ const ProductItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
                         <button
                             onClick={() => handleAddToCart(item)}
                             disabled={item.quantity < 1}
-                            className="inline-flex px-5 py-2 font-medium h-[38px] text-white duration-200 ease-out rounded-lg text-custom-sm bg-blue hover:bg-blue-dark"
+                            className="inline-flex px-5 py-2 font-medium h-[38px] text-white duration-200 ease-out rounded-lg text-custom-sm bg-dark-6 hover:bg-green-bright"
                         >
                             {item.quantity > 0 ? "Add to Cart" : "Out of Stock"}
                         </button>
