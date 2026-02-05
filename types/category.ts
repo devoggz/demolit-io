@@ -5,7 +5,7 @@ type Slug = {
 
 export type Category = {
     title: string;
-    _id: string;
+    id: string;
     image: string;
     slug: Slug;
     description?: string;

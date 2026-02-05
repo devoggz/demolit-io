@@ -26,7 +26,7 @@ const HeroBannerItem = ({ bannerItem }: HeroBannerItemProps) => {
               limited time offer
             </p>
             <span className="flex items-center gap-2.5">
-              <span className="font-bold text-heading-5 text-dark">
+              <span className="font-bold text-md text-dark">
                 {formatPrice(
                   bannerItem?.product?.discountedPrice
                     ? bannerItem?.product?.discountedPrice
@@ -34,7 +34,7 @@ const HeroBannerItem = ({ bannerItem }: HeroBannerItemProps) => {
                 )}
               </span>
               {bannerItem?.product?.discountedPrice && (
-                <span className="text-2xl font-medium line-through text-dark-4">
+                <span className="text-sm font-medium line-through text-dark-4">
                   {formatPrice(bannerItem?.product?.price)}
                 </span>
               )}

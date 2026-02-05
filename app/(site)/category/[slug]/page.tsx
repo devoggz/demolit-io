@@ -1,8 +1,8 @@
 import { getAllProducts } from "@/components/get-api-data/product";
 import { getCategories } from "@/components/get-api-data/category";
 import ProductItem from "@/components/Common/ProductItem";
-import ShopSidebar from "@/components/Shop/ShopSidebar";
-import { notFound } from "next/navigation";
+import ShopSidebar, { FilterState } from "@/components/Shop/ShopSidebar";
+import {notFound} from "next/navigation";
 
 export default async function CategoryPage({
                                                params,
@@ -10,7 +10,7 @@ export default async function CategoryPage({
     params: Promise<{ slug: string }>;
 }) {
     // ✅ FIX: await params before using it
-    const { slug } = await params;
+    const {slug} = await params;
 
     const allProducts = await getAllProducts();
     const categories = await getCategories();
@@ -48,7 +48,9 @@ export default async function CategoryPage({
                         <ShopSidebar
                             categories={categories}
                             totalProducts={categoryProducts.length}
-                        />
+                            onFilterChange={function (filters: FilterState): void {
+                                throw new Error("Function not implemented.");
+                            }}                        />
                     </aside>
 
                     {/* Main Content */}

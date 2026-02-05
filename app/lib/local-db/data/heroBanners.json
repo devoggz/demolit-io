@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "bannerName": "Summer Sale",
+    "bannerName": "January Sale",
     "bannerImage": "/images/hero/bannar-1.png",
     "slug": "summer-sale-banner",
     "productId": "prod_001",
-    "subtitle": "Amazing deals on premium audio",
+    "subtitle": "Amazing deals on premium phones",
     "createdAt": "2024-01-15T10:00:00.000Z",
     "updatedAt": "2024-01-20T15:30:00.000Z",
     "product": {
-      "price": 99.99,
-      "discountedPrice": 79.99,
+      "price": 29999.99,
+      "discountedPrice": 25999.99,
       "title": "Premium Wireless Headphones",
       "slug": "premium-wireless-headphones"
     }
@@ -18,15 +18,15 @@
   {
     "id": 2,
     "bannerName": "New Arrivals",
-    "bannerImage": "/images/hero/bannar-2.png",
+    "bannerImage": "/images/hero/ear01.png",
     "slug": "new-arrivals-banner",
     "productId": "prod_002",
     "subtitle": "Latest tech at your fingertips",
     "createdAt": "2024-01-16T10:00:00.000Z",
     "updatedAt": "2024-01-21T15:30:00.000Z",
     "product": {
-      "price": 149.99,
-      "discountedPrice": null,
+      "price": 9999.99,
+      "discountedPrice": 7599,
       "title": "Smart Watch Pro",
       "slug": "smart-watch-pro"
     }

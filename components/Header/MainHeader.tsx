@@ -138,16 +138,16 @@ const MainHeader = ({ headerData }: IProps) => {
                 <UserIcon />
               </Link>
 
-              <Link
-                href="/wishlist"
-                className="relative text-gray-700 transition hover:text-blue focus:outline-none"
-                aria-label="Wishlist"
-              >
-                <HeartIcon />
-                <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-red-600 text-[10px] font-normal rounded-full inline-flex items-center justify-center">
-                  {wishlistCount}
-                </span>
-              </Link>
+              {/*<Link*/}
+              {/*  href="/wishlist"*/}
+              {/*  className="relative text-gray-700 transition hover:text-blue focus:outline-none"*/}
+              {/*  aria-label="Wishlist"*/}
+              {/*>*/}
+              {/*  <HeartIcon />*/}
+              {/*  <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-red-600 text-[10px] font-normal rounded-full inline-flex items-center justify-center">*/}
+              {/*    {wishlistCount}*/}
+              {/*  </span>*/}
+              {/*</Link>*/}
 
               <button
                 className="relative text-gray-700 transition hover:text-blue focus:outline-none"
@@ -173,7 +173,6 @@ const MainHeader = ({ headerData }: IProps) => {
         </div>
       </header>
 
-      {/* Mobile Menu - Offcanvas */}
 
       <MobileMenu
         headerLogo={headerData?.headerLogo || null}

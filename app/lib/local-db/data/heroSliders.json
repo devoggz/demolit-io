@@ -2,7 +2,7 @@
   {
     "id": 1,
     "sliderName": "Featured Deal",
-    "sliderImage": "/images/hero/slider-1.png",
+    "sliderImage": "/images/hero/hero-04.png",
     "discountRate": 20,
     "slug": "featured-deal-slider",
     "productId": "prod_003",
@@ -11,15 +11,15 @@
     "product": {
       "price": 299.99,
       "discountedPrice": 239.99,
-      "title": "Ultra HD 4K Monitor",
+      "title": "SpaceBox Max 200W Auracast",
       "slug": "ultra-hd-4k-monitor",
-      "shortDescription": "Experience stunning visuals with our premium 4K monitor"
+      "shortDescription": "Feel the Beat, Command the Crowd"
     }
   },
   {
     "id": 2,
     "sliderName": "Best Seller",
-    "sliderImage": "/images/hero/slider-2.png",
+    "sliderImage": "/images/hero/slider-4.png",
     "discountRate": 15,
     "slug": "best-seller-slider",
     "productId": "prod_004",
@@ -28,15 +28,15 @@
     "product": {
       "price": 199.99,
       "discountedPrice": 169.99,
-      "title": "Mechanical Gaming Keyboard",
+      "title": "Oraimo AMOLED IP68 Smart Watch",
       "slug": "mechanical-gaming-keyboard",
-      "shortDescription": "Premium mechanical switches for the ultimate gaming experience"
+      "shortDescription": "The watch has diverse built-in gadgets to meet your various daily usage scenarios."
     }
   },
   {
     "id": 3,
     "sliderName": "Limited Edition",
-    "sliderImage": "/images/hero/slider-3.png",
+    "sliderImage": "/images/hero/slider-5.png",
     "discountRate": 25,
     "slug": "limited-edition-slider",
     "productId": "prod_005",
@@ -45,9 +45,9 @@
     "product": {
       "price": 399.99,
       "discountedPrice": 299.99,
-      "title": "Professional Graphics Tablet",
+      "title": "SmartAirFryer 1500W Cooking ",
       "slug": "professional-graphics-tablet",
-      "shortDescription": "Create stunning digital art with precision and control"
+      "shortDescription": "oraimo SmartAirFryer offers the ultimate crispy experience with less oil."
     }
   }
 ]
