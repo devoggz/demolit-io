@@ -5,7 +5,7 @@ import cartReducer from "./features/cart-slice";
 import wishlistReducer from "./features/wishlist-slice";
 import productDetailsReducer from "./features/product-details";
 
-import { TypedUseSelectorHook, useSelector } from "react-redux";
+import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import { saveCartToStorage } from "@/app/lib/cartStorage";
 
 const localStorageMiddleware: Middleware = (store) => (next) => (action: any) => {
@@ -28,10 +28,13 @@ export const store = configureStore({
     productDetailsReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(localStorageMiddleware),
+      getDefaultMiddleware().concat(localStorageMiddleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+/* 🔥 FIX — this is the only change */
+export const useAppDispatch = () => useDispatch<AppDispatch>();
