@@ -1,7 +1,6 @@
 import Newsletter from "../Common/Newsletter";
 import Categories from "./Categories";
 import Hero from "./Hero";
-import FooterFeature from "./Hero/FooterFeature";
 import NewArrival from "./NewArrivals";
 import PromoBanner from "./PromoBanner";
 
@@ -12,11 +11,7 @@ const Home = () => {
             <Categories />
             <NewArrival />
             <PromoBanner />
-            {/*<BestSeller />*/}
-            {/*<CountDown />*/}
-            {/*<Testimonials />*/}
             <Newsletter />
-            {/*<FooterFeature />*/}
         </main>
     );
 };

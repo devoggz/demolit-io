@@ -78,19 +78,19 @@ const PromoBanner = () => {
         />
         <div className="grid gap-7.5 grid-cols-1 lg:grid-cols-2">
           <SmallPromoBanner
-            imageUrl="/images/promo/promo-02.png"
-            subtitle="Foldable Motorised Treadmill"
-            title="Workout At Home"
+            imageUrl="/images/promo/promo-05.png"
+            subtitle="oraimo SmartBlender "
+            title="Cup 1L Juice Blender"
             discount="Flat 20% off"
-            link="iphone-14-plus--6128gb"
+            link="smart-blender"
             buttonText="Grab the deal"
           />
 
           <SmallPromoBanner
-            imageUrl="/images/promo/promo-03.png"
-            subtitle="Apple Watch Ultra"
+            imageUrl="/images/promo/promo-04.png"
+            subtitle="Watch 5 Lite"
             title="Up to 40% off"
-            description="The aerospace-grade titanium case strikes the perfect balance of everything."
+            description="More than 28-Day Standby, 7-Day Usage Time Extended Power, Uninterrupted Use"
             link="/products/apple-watch-ultra"
             buttonText="Grab the deal"
           />

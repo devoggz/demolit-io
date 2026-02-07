@@ -2,15 +2,15 @@
   {
     "id": 1,
     "bannerName": "January Sale",
-    "bannerImage": "/images/hero/bannar-1.png",
+    "bannerImage": "/images/hero/bannar-3.png",
     "slug": "summer-sale-banner",
     "productId": "prod_001",
-    "subtitle": "Amazing deals on premium phones",
+    "subtitle": "MasterTrim Pro Hair Trimmer",
     "createdAt": "2024-01-15T10:00:00.000Z",
     "updatedAt": "2024-01-20T15:30:00.000Z",
     "product": {
-      "price": 29999.99,
-      "discountedPrice": 25999.99,
+      "price": 4999.99,
+      "discountedPrice": 4599.99,
       "title": "Premium Wireless Headphones",
       "slug": "premium-wireless-headphones"
     }
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "bannerName": "New Arrivals",
-    "bannerImage": "/images/hero/ear01.png",
+    "bannerImage": "/images/hero/ear02.png",
     "slug": "new-arrivals-banner",
     "productId": "prod_002",
     "subtitle": "Latest tech at your fingertips",

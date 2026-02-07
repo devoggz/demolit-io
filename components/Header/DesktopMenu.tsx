@@ -76,7 +76,7 @@ const DesktopMenu = ({ menuData, stickyMenu }: DesktopMenuProps) => {
             ) : (
               <Link
                 href={menuItem.path || "#"}
-                className={`hover:text-blue font-medium ${stickyMenu ? "py-4" : "py-6"} block relative text-sm ${menuItem.path && pathname.split('?')[0] === menuItem.path.split('?')[0] ? "text-blue" : "text-dark"}`}
+                className={`hover:text-green-bright font-medium ${stickyMenu ? "py-4" : "py-6"} block relative text-sm ${menuItem.path && pathname.split('?')[0] === menuItem.path.split('?')[0] ? "text-dark-6" : "text-dark-6"}`}
               >
                 {menuItem.title}
               </Link>

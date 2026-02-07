@@ -71,11 +71,11 @@ const MainHeader = ({ headerData }: IProps) => {
         }`}
       >
         {/* Topbar */}
-        <div className="bg-dark-6 py-2.5">
+        <div className="bg-dark-6 py-2">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 xl:px-0">
             <div className="flex justify-between">
               <div className="hidden lg:block">
-                <p className="text-sm font-medium text-white">
+                <p className="text-xs font-medium text-white">
                   {headerData?.headerText || "Free delivery around Kakamega"}
                 </p>
               </div>
@@ -107,8 +107,8 @@ const MainHeader = ({ headerData }: IProps) => {
                   <Image
                     src={headerData?.headerLogo || "/images/logo/logo.svg"}
                     alt="Logo"
-                    width={200}
-                    height={50}
+                    width={120}
+                    height={40}
                     priority
                   />
                 </div>
@@ -123,7 +123,7 @@ const MainHeader = ({ headerData }: IProps) => {
             {/* Action Buttons */}
             <div className="flex items-center gap-3">
               <button
-                className="transition hover:text-blue focus:outline-none"
+                className="transition hover:text-green-bright focus:outline-none"
                 onClick={() => setSearchModalOpen(true)}
                 aria-label="Search"
               >
@@ -132,25 +132,25 @@ const MainHeader = ({ headerData }: IProps) => {
 
               <Link
                 href="#"
-                className="transition hover:text-blue focus:outline-none"
+                className="transition hover:text-green-bright focus:outline-none"
                 aria-label="Account"
               >
                 <UserIcon />
               </Link>
 
-              {/*<Link*/}
-              {/*  href="/wishlist"*/}
-              {/*  className="relative text-gray-700 transition hover:text-blue focus:outline-none"*/}
-              {/*  aria-label="Wishlist"*/}
-              {/*>*/}
-              {/*  <HeartIcon />*/}
-              {/*  <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-red-600 text-[10px] font-normal rounded-full inline-flex items-center justify-center">*/}
-              {/*    {wishlistCount}*/}
-              {/*  </span>*/}
-              {/*</Link>*/}
+              <Link
+                href="/wishlist"
+                className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
+                aria-label="Wishlist"
+              >
+                <HeartIcon />
+                <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-red-600 text-[10px] font-normal rounded-full inline-flex items-center justify-center">
+                  {wishlistCount}
+                </span>
+              </Link>
 
               <button
-                className="relative text-gray-700 transition hover:text-blue focus:outline-none"
+                className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
                 onClick={handleOpenCartModal}
                 aria-label="Cart"
               >

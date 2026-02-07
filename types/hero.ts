@@ -1,3 +1,5 @@
+// types/hero.ts
+
 export type IHeroSlider = {
   id: number;
   sliderName: string;
@@ -22,7 +24,7 @@ export type IHeroBanner = {
   bannerImage: string;
   slug: string;
   productId: string;
-  subtitle?: string; // Added optional subtitle field
+  subtitle?: string;
   createdAt: Date;
   updatedAt: Date;
   product: {

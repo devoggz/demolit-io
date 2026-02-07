@@ -149,24 +149,24 @@ export default function ShopWithSidebarClient({ initialProducts, categories }: P
             {/* Main Content */}
             <main className="lg:col-span-9">
                 {/* Sort Options */}
-                <div className="flex items-center justify-between mb-6">
-                    <p className="text-sm text-dark-4">
-                        Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of{" "}
-                        {filteredProducts.length} products
-                    </p>
-                    <select
-                        value={sortBy}
-                        onChange={(e) =>
-                            handleSortChange(
-                                e.target.value as "default" | "price-asc" | "price-desc"
-                            )
-                        }
-                        className="px-4 py-2 border border-gray-3 rounded-lg text-sm focus:outline-none focus:border-blue"
-                    >
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="price-asc">Price: Low to High</option>
-                    </select>
-                </div>
+                {/*<div className="flex items-center justify-between mb-6">*/}
+                {/*    <p className="text-sm text-dark-4">*/}
+                {/*        Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of{" "}*/}
+                {/*        {filteredProducts.length} products*/}
+                {/*    </p>*/}
+                {/*    <select*/}
+                {/*        value={sortBy}*/}
+                {/*        onChange={(e) =>*/}
+                {/*            handleSortChange(*/}
+                {/*                e.target.value as "default" | "price-asc" | "price-desc"*/}
+                {/*            )*/}
+                {/*        }*/}
+                {/*        className="px-4 py-2 border border-gray-3 rounded-lg text-sm focus:outline-none focus:border-blue"*/}
+                {/*    >*/}
+                {/*        <option value="price-desc">Price: High to Low</option>*/}
+                {/*        <option value="price-asc">Price: Low to High</option>*/}
+                {/*    </select>*/}
+                {/*</div>*/}
 
                 {/* Products Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-7.5 gap-y-9">

@@ -118,10 +118,10 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
         <div className="space-y-6">
             {/* Filters Header */}
             <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-dark">Filters:</h3>
+                <h3 className="text-lg font-semibold text-dark-6">Filters:</h3>
                 <button
                     onClick={handleClearAll}
-                    className="text-sm text-blue hover:underline"
+                    className="text-sm text-green-bright hover:underline"
                 >
                     Clean All
                 </button>
@@ -133,7 +133,7 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
                     onClick={() => toggleSection("category")}
                     className="flex items-center justify-between w-full mb-4"
                 >
-                    <h4 className="text-base font-semibold text-dark">Category</h4>
+                    <h4 className="text-base font-semibold text-dark-6">Category</h4>
                     <svg
                         className={`w-5 h-5 transition-transform ${
                             expandedSections.category ? "rotate-180" : ""
@@ -152,7 +152,7 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
                 </button>
 
                 {expandedSections.category && (
-                    <ul className="space-y-3">
+                    <ul className="space-y-6">
                         {categories.map((category) => {
                             const categorySlug = String(category.slug);
                             return (
@@ -161,20 +161,12 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
                                         onClick={() => handleCategoryClick(categorySlug)}
                                         className={`flex items-center justify-between text-sm w-full text-left transition ${
                                             selectedCategory === categorySlug
-                                                ? "text-blue font-semibold"
-                                                : "text-dark-4 hover:text-blue"
+                                                ? "text-green-bright font-semibold"
+                                                : "text-dark-4 hover:text-green-bright"
                                         }`}
                                     >
                                         <span>{category.title}</span>
-                                        <span
-                                            className={`w-6 h-6 flex items-center justify-center rounded-full text-xs ${
-                                                selectedCategory === categorySlug
-                                                    ? "bg-blue text-white"
-                                                    : "bg-gray-1"
-                                            }`}
-                                        >
-                                            {category.productCount}
-                                        </span>
+
                                     </button>
                                 </li>
                             );
@@ -189,7 +181,7 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
                     onClick={() => toggleSection("size")}
                     className="flex items-center justify-between w-full mb-4"
                 >
-                    <h4 className="text-base font-semibold text-dark">Size</h4>
+                    <h4 className="text-base font-semibold text-dark-6">Size</h4>
                     <svg
                         className={`w-5 h-5 transition-transform ${
                             expandedSections.size ? "rotate-180" : ""
@@ -298,8 +290,8 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
                 {expandedSections.price && (
                     <div>
                         <div className="flex items-center justify-between mb-4">
-                            <span className="text-sm text-dark-4">${priceRange[0]}</span>
-                            <span className="text-sm text-dark-4">${priceRange[1]}</span>
+                            <span className="text-sm text-dark-4">{priceRange[0]}</span>
+                            <span className="text-sm text-dark-4">{priceRange[1]}</span>
                         </div>
 
                         <div className="relative">
@@ -309,7 +301,7 @@ export default function ShopSidebar({ categories, totalProducts, onFilterChange 
                                 max="999"
                                 value={priceRange[1]}
                                 onChange={(e) => handlePriceChange(parseInt(e.target.value))}
-                                className="w-full h-2 bg-gray-3 rounded-lg appearance-none cursor-pointer accent-blue"
+                                className="w-full h-2 bg-gray-3 rounded-lg appearance-none cursor-pointer accent-green-bright"
                             />
                         </div>
                     </div>

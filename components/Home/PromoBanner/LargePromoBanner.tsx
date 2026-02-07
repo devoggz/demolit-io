@@ -30,7 +30,7 @@ export default function LargePromoBanner({
         <p>{description}</p>
         <Link
           href={`/products/${link}`}
-          className="inline-flex font-medium text-custom-sm text-white bg-blue py-3 px-7 rounded-lg  ease-out duration-200 hover:bg-blue-dark mt-7.5"
+          className="inline-flex font-medium text-custom-sm text-white bg-dark-6 py-3 px-7 rounded-lg  ease-out duration-200 hover:bg-green-bright mt-7.5"
         >
           {buttonText}
         </Link>
