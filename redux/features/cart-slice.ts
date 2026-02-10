@@ -1,4 +1,5 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { RootState } from "../store";
 
 type InitialState = {
@@ -50,6 +51,7 @@ export const cart = createSlice({
     },
     removeItemFromCart: (state, action: PayloadAction<string | number>) => {
       const itemId = action.payload;
+
       state.items = state.items.filter((item) => item.id !== itemId);
     },
     incrementItem: (state, action: PayloadAction<string | number>) => {
@@ -70,7 +72,7 @@ export const cart = createSlice({
     },
     updateCartItemQuantity: (
       state,
-      action: PayloadAction<{ id: string | number; quantity: number }>
+      action: PayloadAction<{ id: string | number; quantity: number }>,
     ) => {
       const { id, quantity } = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
@@ -109,9 +111,11 @@ export const selectCartCount = createSelector([selectCartItems], (items) => {
 
 export const selectCartDetails = createSelector([selectCartItems], (items) => {
   const details: Record<string | number, CartItem> = {};
+
   items.forEach((item) => {
     details[item.id] = item;
   });
+
   return details;
 });
 
@@ -128,7 +132,7 @@ export const selectFormattedTotalPrice = createSelector(
       style: "currency",
       currency: "USD",
     }).format(totalPrice / 100);
-  }
+  },
 );
 
 export const {

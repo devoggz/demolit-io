@@ -27,35 +27,36 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <div className="relative text-white" ref={dropdownRef}>
+    <div ref={dropdownRef} className="relative text-white">
       <button
-        type="button"
         className="flex items-center gap-2.5 text-sm"
+        type="button"
         onClick={() => setOpen((prev) => !prev)}
       >
         {selected}
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="17"
-          height="17"
-          viewBox="0 0 17 17"
-          fill="none"
           className={`transition-transform duration-300 ${
             open ? "rotate-180" : "rotate-0"
           }`}
+          fill="none"
+          height="17"
+          viewBox="0 0 17 17"
+          width="17"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M4.3374 6.41663L8.50407 10.5833L12.6707 6.41663"
             stroke="white"
-            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
+            strokeWidth="1.5"
           />
         </svg>
       </button>
@@ -65,11 +66,11 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
           {options.map((option) => (
             <li
               key={option}
+              className="px-4 py-2 text-sm font-medium rounded-lg cursor-pointer hover:bg-gray-3 text-dark"
               onClick={() => {
                 setSelected(option);
                 setOpen(false);
               }}
-              className="px-4 py-2 text-sm font-medium rounded-lg cursor-pointer hover:bg-gray-3 text-dark"
             >
               {option}
             </li>

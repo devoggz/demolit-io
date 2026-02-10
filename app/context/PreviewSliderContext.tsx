@@ -11,9 +11,11 @@ const PreviewSlider = createContext<PreviewSliderType | undefined>(undefined);
 
 export const usePreviewSlider = () => {
   const context = useContext(PreviewSlider);
+
   if (!context) {
     throw new Error("usePreviewSlider must be used within a ModalProvider");
   }
+
   return context;
 };
 

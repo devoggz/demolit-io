@@ -1,12 +1,12 @@
-import type { IconProps } from '@/types/icon-props';
+import type { IconProps } from "@/types/icon-props";
 
 export function FacebookIcon(props: IconProps) {
   return (
     <svg
-      width="18"
+      fill="currentColor"
       height="18"
       viewBox="0 0 18 18"
-      fill="currentColor"
+      width="18"
       {...props}
     >
       <path
@@ -14,9 +14,9 @@ export function FacebookIcon(props: IconProps) {
         fill=""
       />
       <path
-        opacity="0.04"
         d="M7.70887 11.4764V17.3333H10.291V11.4764H12.2472L12.6384 9.03926H10.291V7.46693C10.291 7.10006 10.3954 6.7987 10.604 6.56285C10.8388 6.30079 11.1909 6.16977 11.6604 6.16977H12.7167V4.08643C12.0907 3.98161 11.4647 3.9292 10.8388 3.9292C9.87371 3.9292 9.10428 4.21746 8.53046 4.79398C7.98273 5.3705 7.70887 6.16977 7.70887 7.19178V9.03926H5.59619V11.4764H7.70887Z"
         fill=""
+        opacity="0.04"
       />
     </svg>
   );
@@ -25,10 +25,10 @@ export function FacebookIcon(props: IconProps) {
 export function TwitterIcon(props: IconProps) {
   return (
     <svg
-      width="20"
+      fill="currentColor"
       height="20"
       viewBox="0 0 20 20"
-      fill="currentColor"
+      width="20"
       {...props}
     >
       <path
@@ -42,10 +42,10 @@ export function TwitterIcon(props: IconProps) {
 export function InstagramIcon(props: IconProps) {
   return (
     <svg
-      width="20"
+      fill="currentColor"
       height="20"
       viewBox="0 0 20 20"
-      fill="currentColor"
+      width="20"
       {...props}
     >
       <g clipPath="url(#clip0_317_501)">
@@ -64,7 +64,7 @@ export function InstagramIcon(props: IconProps) {
       </g>
       <defs>
         <clipPath id="clip0_317_501">
-          <rect width="20" height="20" fill="white" />
+          <rect fill="white" height="20" width="20" />
         </clipPath>
       </defs>
     </svg>
@@ -74,10 +74,10 @@ export function InstagramIcon(props: IconProps) {
 export function LinkedInIcon(props: IconProps) {
   return (
     <svg
-      width="20"
+      fill="currentColor"
       height="20"
       viewBox="0 0 20 20"
-      fill="currentColor"
+      width="20"
       {...props}
     >
       <path
@@ -85,9 +85,9 @@ export function LinkedInIcon(props: IconProps) {
         fill=""
       />
       <path
-        opacity="0.04"
         d="M15.4297 15.4297V11.0156C15.4297 10.2604 15.1562 9.6224 14.6094 9.10156C14.0885 8.55469 13.4505 8.28125 12.6953 8.28125C12.3307 8.28125 11.9661 8.38542 11.6016 8.59375C11.237 8.80208 10.9635 9.0625 10.7812 9.375V8.4375H8.4375V15.4297H10.7812V11.2891C10.7812 10.9766 10.8854 10.7161 11.0938 10.5078C11.3281 10.2734 11.6016 10.1562 11.9141 10.1562C12.2526 10.1562 12.526 10.2734 12.7344 10.5078C12.9688 10.7161 13.0859 10.9766 13.0859 11.2891V15.4297H15.4297ZM5.74219 7.14844C6.13281 7.14844 6.45833 7.01823 6.71875 6.75781C7.00521 6.47135 7.14844 6.13281 7.14844 5.74219C7.14844 5.35156 7.00521 5.02604 6.71875 4.76562C6.45833 4.47917 6.13281 4.33594 5.74219 4.33594C5.35156 4.33594 5.01302 4.47917 4.72656 4.76562C4.46615 5.02604 4.33594 5.35156 4.33594 5.74219C4.33594 6.13281 4.46615 6.47135 4.72656 6.75781C5.01302 7.01823 5.35156 7.14844 5.74219 7.14844ZM6.875 15.4297V8.4375H4.57031V15.4297H6.875Z"
         fill=""
+        opacity="0.04"
       />
     </svg>
   );
@@ -95,15 +95,15 @@ export function LinkedInIcon(props: IconProps) {
 
 export function GoogleIcon(props: IconProps) {
   return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+    <svg fill="none" height="20" viewBox="0 0 20 20" width="20" {...props}>
       <g clipPath="url(#clip0_98_7461)">
         <mask
+          height="20"
           id="mask0_98_7461"
           maskUnits="userSpaceOnUse"
+          width="20"
           x="0"
           y="0"
-          width="20"
-          height="20"
         >
           <path d="M20 0H0V20H20V0Z" fill="white" />
         </mask>
@@ -128,7 +128,7 @@ export function GoogleIcon(props: IconProps) {
       </g>
       <defs>
         <clipPath id="clip0_98_7461">
-          <rect width="20" height="20" fill="white" />
+          <rect fill="white" height="20" width="20" />
         </clipPath>
       </defs>
     </svg>
@@ -137,7 +137,7 @@ export function GoogleIcon(props: IconProps) {
 
 export function GitHubIcon(props: IconProps) {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" {...props}>
+    <svg fill="none" height="22" viewBox="0 0 22 22" width="22" {...props}>
       <path
         d="M10.9997 1.83331C5.93773 1.83331 1.83301 6.04119 1.83301 11.232C1.83301 15.3847 4.45954 18.9077 8.10178 20.1505C8.55988 20.2375 8.72811 19.9466 8.72811 19.6983C8.72811 19.4743 8.71956 18.7338 8.71567 17.9485C6.16541 18.517 5.6273 16.8395 5.6273 16.8395C5.21032 15.7532 4.60951 15.4644 4.60951 15.4644C3.77785 14.8811 4.6722 14.893 4.6722 14.893C5.59272 14.9593 6.07742 15.8615 6.07742 15.8615C6.89499 17.2984 8.22184 16.883 8.74493 16.6429C8.82718 16.0353 9.06478 15.6208 9.32694 15.3861C7.2909 15.1484 5.15051 14.3425 5.15051 10.7412C5.15051 9.71509 5.5086 8.87661 6.09503 8.21844C5.99984 7.98167 5.68611 7.02577 6.18382 5.73115C6.18382 5.73115 6.95358 5.47855 8.70532 6.69458C9.43648 6.48627 10.2207 6.3819 10.9997 6.37836C11.7787 6.3819 12.5635 6.48627 13.2961 6.69458C15.0457 5.47855 15.8145 5.73115 15.8145 5.73115C16.3134 7.02577 15.9995 7.98167 15.9043 8.21844C16.4921 8.87661 16.8477 9.715 16.8477 10.7412C16.8477 14.351 14.7033 15.146 12.662 15.3786C12.9909 15.6702 13.2838 16.2423 13.2838 17.1191C13.2838 18.3766 13.2732 19.3888 13.2732 19.6983C13.2732 19.9485 13.4382 20.2415 13.9028 20.1492C17.5431 18.905 20.1663 15.3833 20.1663 11.232C20.1663 6.04119 16.0621 1.83331 10.9997 1.83331Z"
         fill="#15171A"

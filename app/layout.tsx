@@ -1,12 +1,10 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@heroui/link";
 import clsx from "clsx";
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-
 import React from "react";
 
+import { siteConfig } from "@/config/site";
+import { fontSans } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -32,7 +30,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-
     <html suppressHydrationWarning lang="en">
       <head />
       <body
@@ -41,14 +38,11 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-
-          <div className="relative flex flex-col h-screen">
-
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-
-          </div>
+        <div className="relative flex flex-col h-screen">
+          <main className="container mx-auto max-w-7xl pt-16 px-1 flex-grow">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

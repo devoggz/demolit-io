@@ -1,4 +1,11 @@
 "use client";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+
+import ReviewStar from "../Shop/ReviewStar";
+
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import { useModalContext } from "@/app/context/QuickViewModalContext";
 import {
@@ -13,12 +20,7 @@ import { updateproductDetails } from "@/redux/features/product-details";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 import { AppDispatch, useAppSelector } from "@/redux/store";
 import { formatPrice } from "@/utils/formatePrice";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
 import { useCart } from "@/hooks/useCart";
-import ReviewStar from "../Shop/ReviewStar";
 
 const QuickViewModal = () => {
   const { isModalOpen, closeModal } = useModalContext();
@@ -35,7 +37,7 @@ const QuickViewModal = () => {
   const [activePreview, setActivePreview] = useState(0);
 
   const defaultVariant = product?.productVariants?.find(
-    (variant) => variant.isDefault
+    (variant) => variant.isDefault,
   );
 
   // preview modal
@@ -44,7 +46,7 @@ const QuickViewModal = () => {
       updateproductDetails({
         ...product,
         updatedAt: product.updatedAt,
-      })
+      }),
     );
     openPreviewModal();
   };
@@ -63,6 +65,7 @@ const QuickViewModal = () => {
       color: defaultVariant?.color ? defaultVariant.color : "",
       size: defaultVariant?.size ? defaultVariant.size : "",
     };
+
     if (product.quantity > 0) {
       // @ts-ignore
       addItem(cartItem);
@@ -85,11 +88,11 @@ const QuickViewModal = () => {
           : product.price,
         quantity: product.quantity,
         color: defaultVariant?.color ? defaultVariant.color : "",
-      })
+      }),
     );
   };
   const isAlreadyInWishlist = useAppSelector((state) =>
-    state.wishlistReducer.items?.some((item) => item.id === product.id)
+    state.wishlistReducer.items?.some((item) => item.id === product.id),
   );
 
   useEffect(() => {
@@ -126,8 +129,8 @@ const QuickViewModal = () => {
           setAvgRating(
             data?.review?.reduce(
               (acc: number, review: any) => acc + review?.ratings,
-              0
-            ) / data?.review?.length
+              0,
+            ) / data?.review?.length,
           );
           setLoading(false);
         })
@@ -142,14 +145,15 @@ const QuickViewModal = () => {
     <>
       {product?.title && (
         <div
-          className={`${isModalOpen ? "z-99999" : "hidden"
-            } fixed top-0 left-0  overflow-y-scroll no-scrollbar max-h-[100vh] w-full sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
+          className={`${
+            isModalOpen ? "z-99999" : "hidden"
+          } fixed top-0 left-0  overflow-y-scroll no-scrollbar max-h-[100vh] w-full sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
         >
           <div className="flex items-center justify-center ">
             <div className="w-full max-w-[1100px] rounded-xl shadow-3 bg-white p-7.5 relative modal-content">
               <button
-                onClick={() => closeModal()}
                 className="absolute top-0 right-0 flex items-center justify-center duration-150 ease-in rounded-full sm:top-6 sm:right-6 text-body hover:text-dark-6"
+                onClick={() => closeModal()}
               >
                 <span className="sr-only">Close modal</span>
                 <CloseLine />
@@ -161,17 +165,19 @@ const QuickViewModal = () => {
                     <div className="flex flex-col gap-5">
                       {product?.productVariants?.map((thumb, key: number) => (
                         <button
-                          onClick={() => setActivePreview(key)}
                           key={key}
-                          className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-green-bright ${activePreview === key && "border-2 border-green-bright"
-                            }`}
+                          className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-green-bright ${
+                            activePreview === key &&
+                            "border-2 border-green-bright"
+                          }`}
+                          onClick={() => setActivePreview(key)}
                         >
                           <Image
-                            src={thumb.image}
                             alt="thumbnail"
-                            width={61}
-                            height={61}
                             className="aspect-square"
+                            height={61}
+                            src={thumb.image}
+                            width={61}
                           />
                         </button>
                       ))}
@@ -180,22 +186,22 @@ const QuickViewModal = () => {
                     <div className="relative z-1 overflow-hidden flex items-center justify-center w-full sm:min-h-[508px] bg-gray-1 rounded-lg border border-gray-3">
                       <div>
                         <button
-                          onClick={handlePreviewSlider}
                           className="absolute z-50 flex items-center justify-center w-10 h-10 duration-200 ease-out bg-white rounded-lg gallery__Image shadow-1 text-dark-6 hover:text-green-bright top-4 lg:top-8 right-4 lg:right-8"
+                          onClick={handlePreviewSlider}
                         >
                           <span className="sr-only">Fullscreen</span>
                           <FullScreenIcon />
                         </button>
 
                         <Image
+                          alt="products-details"
+                          height={400}
                           src={
                             product?.productVariants?.[activePreview]?.image
                               ? product.productVariants[activePreview].image
                               : ""
                           }
-                          alt="products-details"
                           width={400}
-                          height={400}
                         />
                       </div>
                     </div>
@@ -210,7 +216,7 @@ const QuickViewModal = () => {
                         {Math.round(
                           ((product.price - product.discountedPrice) /
                             product.price) *
-                          100
+                            100,
                         )}
                         % OFF
                       </span>
@@ -263,8 +269,9 @@ const QuickViewModal = () => {
 
                       <span className="flex items-center gap-2">
                         <span
-                          className={`text-lg font-medium text-dark-4 xl:text-2xl ${product.discountedPrice ? "line-through" : ""
-                            }`}
+                          className={`text-lg font-medium text-dark-4 xl:text-2xl ${
+                            product.discountedPrice ? "line-through" : ""
+                          }`}
                         >
                           {formatPrice(product.price)}
                         </span>
@@ -283,8 +290,8 @@ const QuickViewModal = () => {
 
                       <div className="flex items-center gap-3">
                         <button
-                          onClick={() => setQuantity(quantity + 1)}
                           className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark-6 hover:text-green-bright"
+                          onClick={() => setQuantity(quantity + 1)}
                         >
                           <span className="sr-only">Increase quantity</span>
                           <PlusIcon />
@@ -298,11 +305,11 @@ const QuickViewModal = () => {
                         </span>
 
                         <button
+                          className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark-6 hover:text-green-bright"
+                          disabled={quantity <= 1}
                           onClick={() =>
                             quantity > 1 && setQuantity(quantity - 1)
                           }
-                          className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark-6 hover:text-green-bright"
-                          disabled={quantity <= 1}
                         >
                           <span className="sr-only">Decrease quantity</span>
                           <MinusIcon />
@@ -313,17 +320,17 @@ const QuickViewModal = () => {
 
                   <div className="flex flex-wrap items-center gap-4">
                     <button
+                      className="inline-flex py-3 font-medium text-white duration-200 ease-out rounded-lg bg-green-bright px-7 hover:bg-green-bright/80"
                       disabled={quantity < 1 || product.quantity < 1}
                       onClick={() => handleAddToCart()}
-                      className="inline-flex py-3 font-medium text-white duration-200 ease-out rounded-lg bg-green-bright px-7 hover:bg-green-bright/80"
                     >
                       {product.quantity > 0 ? "Add to Cart" : "Out of Stock"}
                     </button>
 
                     <button
+                      className="inline-flex items-center gap-2 px-7 py-3 font-medium text-white duration-200 ease-out rounded-lg bg-dark-6 hover:bg-green-bright"
                       disabled={isAlreadyInWishlist}
                       onClick={() => handleAddToWishlist()}
-                      className="inline-flex items-center gap-2 px-7 py-3 font-medium text-white duration-200 ease-out rounded-lg bg-dark-6 hover:bg-green-bright"
                     >
                       <HeartIcon />
                       {isAlreadyInWishlist

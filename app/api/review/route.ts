@@ -1,32 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    const body = await req.json();
-    const { productSlug } = body;
+  const body = await req.json();
+  const { productSlug } = body;
 
-    try {
-        // Dynamically import the reviews data
-        const reviewsModule = await import("@/app/lib/local-db/data/reviews.json");
-        const allReviews = reviewsModule.default;
+  try {
+    // Dynamically import the reviews data
+    const reviewsModule = await import("@/app/lib/local-db/data/reviews.json");
+    const allReviews = reviewsModule.default;
 
-        // Filter reviews by productSlug and isApproved
-        const reviews = allReviews.filter(
-            (review: any) => review.productSlug === productSlug && review.isApproved === true
-        );
+    // Filter reviews by productSlug and isApproved
+    const reviews = allReviews.filter(
+      (review: any) =>
+        review.productSlug === productSlug && review.isApproved === true,
+    );
 
-        if (!reviews || reviews.length === 0) {
-            return NextResponse.json(
-                { message: "No reviews found", review: [] },
-                { status: 200 }
-            );
-        }
-
-        return NextResponse.json({ review: reviews }, { status: 200 });
-    } catch (err) {
-        console.error("Error reading reviews:", err);
-        return NextResponse.json(
-            { error: "Internal Server Error" },
-            { status: 500 }
-        );
+    if (!reviews || reviews.length === 0) {
+      return NextResponse.json(
+        { message: "No reviews found", review: [] },
+        { status: 200 },
+      );
     }
+
+    return NextResponse.json({ review: reviews }, { status: 200 });
+  } catch (err) {
+    console.error("Error reading reviews:", err);
+
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 },
+    );
+  }
 }

@@ -14,8 +14,6 @@ export const menuData: MenuItem[] = [
     path: "/shop-with-sidebar",
   },
 
-
-
   {
     title: "Contact",
     path: "/contact",

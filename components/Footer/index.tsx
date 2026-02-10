@@ -1,15 +1,16 @@
-import { CallIcon, EmailIcon, MapIcon } from "@/app/assets/icons";
+import Link from "next/link";
+
+import AccountLinks from "./AccountLinks";
+import FooterBottom from "./FooterBottom";
+import QuickLinks from "./QuickLinks";
+
 import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
 } from "@/app/assets/icons/social";
-import Link from "next/link";
-import AccountLinks from "./AccountLinks";
-import FooterBottom from "./FooterBottom";
-import { AppStoreIcon, GooglePlayIcon } from "./icons";
-import QuickLinks from "./QuickLinks";
+import { CallIcon, EmailIcon, MapIcon } from "@/app/assets/icons";
 
 const Footer = () => {
   return (
@@ -25,27 +26,27 @@ const Footer = () => {
             <ul className="flex flex-col gap-3">
               <li className="flex gap-4.5 text-base">
                 <span className="shrink-0">
-                  <MapIcon className="fill-dark-6" width={24} height={24} />
+                  <MapIcon className="fill-dark-6" height={24} width={24} />
                 </span>
                 Ground Floor Premiere Building, Cannon Awuor Street Kakamega.
               </li>
 
               <li>
                 <Link
-                  href="tel:+099 532-786-9843"
                   className="flex items-center gap-4.5 text-base"
+                  href="tel:+099 532-786-9843"
                 >
-                  <CallIcon className="fill-dark-6" width={24} height={24} />
+                  <CallIcon className="fill-dark-6" height={24} width={24} />
                   +254 701 699 766
                 </Link>
               </li>
 
               <li>
                 <Link
-                  href="mailto:support@example.com"
                   className="flex items-center gap-4.5 text-base"
+                  href="mailto:support@example.com"
                 >
-                  <EmailIcon className="fill-dark-6" width={24} height={24} />
+                  <EmailIcon className="fill-dark-6" height={24} width={24} />
                   support@litman.co.ke
                 </Link>
               </li>
@@ -54,33 +55,33 @@ const Footer = () => {
             {/* <!-- Social Links start --> */}
             <div className="flex items-center gap-4 mt-7.5">
               <Link
-                href="#"
                 className="flex duration-200 ease-out hover:text-green-bright"
+                href="#"
               >
                 <span className="sr-only">Facebook link</span>
                 <FacebookIcon />
               </Link>
 
               <Link
-                href="#"
                 className="flex duration-200 ease-out hover:text-green-bright"
+                href="#"
               >
                 <span className="sr-only">Twitter link</span>
                 <TwitterIcon />
               </Link>
 
               <Link
-                href="#"
                 className="flex duration-200 ease-out hover:text-green-bright"
+                href="#"
               >
                 <span className="sr-only">Instagram link</span>
                 <InstagramIcon />
               </Link>
 
               <Link
-                href="#"
                 aria-label="Linkedin Social Link"
                 className="flex duration-200 ease-out hover:text-green-bright"
+                href="#"
               >
                 <span className="sr-only">LinkedIn link</span>
                 <LinkedInIcon />
@@ -92,8 +93,6 @@ const Footer = () => {
           <AccountLinks />
 
           <QuickLinks />
-
-
         </div>
         {/* <!-- footer menu end --> */}
       </div>

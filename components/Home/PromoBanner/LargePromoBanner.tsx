@@ -20,12 +20,13 @@ export default function LargePromoBanner({
 }: LargePromoBannerProps) {
   return (
     <div
-        style={{
-      backgroundBlendMode: 'soft-light',
-      backgroundImage: `url('/images/hero/pattern.svg')`,
-      backgroundSize: 'auto'
-    }}
-          className="relative hidden lg:block  z-1 overflow-hidden rounded-2xl bg-dark-6 py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5">
+      className="relative hidden lg:block  z-1 overflow-hidden rounded-2xl bg-dark-6 py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5"
+      style={{
+        backgroundBlendMode: "soft-light",
+        backgroundImage: `url('/images/hero/pattern.svg')`,
+        backgroundSize: "auto",
+      }}
+    >
       <div className="max-w-[550px] w-full">
         <span className="block mb-3 text-xl font-medium text-meta-4">
           {subtitle}
@@ -35,18 +36,18 @@ export default function LargePromoBanner({
         </h2>
         <p className="text-meta-4">{description}</p>
         <Link
-          href={`/products/${link}`}
           className="inline-flex font-medium text-custom-sm text-white bg-green-bright py-3 px-7 rounded-lg  ease-out duration-200 hover:bg-green-bright/80 mt-7.5"
+          href={`/products/${link}`}
         >
           {buttonText}
         </Link>
       </div>
       <Image
-        src={imageUrl}
         alt="promo img"
         className="absolute bottom-0 right-4 lg:right-26 -z-1"
-        width={420}
         height={369}
+        src={imageUrl}
+        width={420}
       />
     </div>
   );

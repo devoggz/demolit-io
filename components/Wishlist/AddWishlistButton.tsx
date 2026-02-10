@@ -1,8 +1,10 @@
-import { HeartFilledIcon, HeartIcon, HeartSolid } from "@/app/assets/icons";
+import { useEffect, useState } from "react";
+
+import Tooltip from "../Common/Tooltip";
+
+import { HeartIcon, HeartSolid } from "@/app/assets/icons";
 import { useAppSelector } from "@/redux/store";
 import { Product } from "@/types/product";
-import { useEffect, useState } from "react";
-import Tooltip from "../Common/Tooltip";
 
 // prop type
 type IProps = {
@@ -23,20 +25,20 @@ const WishlistButton = ({ item, handleItemToWishList }: IProps) => {
   }
 
   const isAlreadyWishListed = wishlistItems.some(
-    (wishlistItem) => wishlistItem.id === item.id
+    (wishlistItem) => wishlistItem.id === item.id,
   );
 
   return (
     <Tooltip content="Wishlist" placement="top">
       <button
-        onClick={handleItemToWishList}
         aria-label="button for favorite select"
         className="flex items-center justify-center duration-200 h-[38px] w-[38px] ease-out bg-white border rounded-lg border-gray-3   text-dark-6 hover:text-green-bright"
+        onClick={handleItemToWishList}
       >
         {isAlreadyWishListed ? (
           <HeartSolid />
         ) : (
-          <HeartIcon width={16} height={16} />
+          <HeartIcon height={16} width={16} />
         )}
       </button>
     </Tooltip>

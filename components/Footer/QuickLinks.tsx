@@ -18,11 +18,6 @@ const quickLinks = [
   },
   {
     id: 4,
-    label: "FAQ's",
-    href: "#",
-  },
-  {
-    id: 5,
     label: "Contact",
     href: "#",
   },
@@ -31,7 +26,7 @@ const quickLinks = [
 export default function QuickLinks() {
   return (
     <div className="w-full sm:w-auto">
-      <h2 className="mb-7.5 text-xl font-semibold text-dark-6">Quick Link</h2>
+      <h2 className="mb-7.5 text-xl font-semibold text-dark-6">Quick Links</h2>
 
       <ul className="flex flex-col gap-3">
         {quickLinks.map((link) => (

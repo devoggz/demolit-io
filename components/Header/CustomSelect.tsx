@@ -1,11 +1,12 @@
-import { Category } from '@/types/category';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+import { Category } from "@/types/category";
 
 const CustomSelect = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
-    title: 'All Categories',
+    title: "All Categories",
   });
   const [categories, setCategories] = useState<Category[]>([]);
 
@@ -21,59 +22,58 @@ const CustomSelect = () => {
   useEffect(() => {
     // closing modal while clicking outside
     function handleClickOutside(event: any) {
-      if (!event.target.closest('.dropdown-content')) {
+      if (!event.target.closest(".dropdown-content")) {
         setIsOpen(!isOpen);
       }
     }
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     const fetchCategories = async () => {
       try {
-        const data = await fetch('/api/category');
+        const data = await fetch("/api/category");
         const result = await data.json();
-        if(result?.success){
+
+        if (result?.success) {
           setCategories(result?.data);
         }
       } catch (error) {
-        console.log(error,'error to fetch categories');
+        console.log(error, "error to fetch categories");
       }
     };
 
     fetchCategories();
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
 
   return (
     <div
       className="dropdown-content custom-select relative"
-      style={{ width: '200px' }}
+      style={{ width: "200px" }}
     >
       <div
         className={`select-selected whitespace-nowrap leading-[22px] ${
-          isOpen ? 'select-arrow-active' : ''
+          isOpen ? "select-arrow-active" : ""
         }`}
         onClick={toggleDropdown}
       >
         {selectedOption?.title}
       </div>
-      <div className={`select-items ${isOpen ? '' : 'select-hide'}`}>
+      <div className={`select-items ${isOpen ? "" : "select-hide"}`}>
         {categories.map((option, index) => (
           <div
             key={index}
-            onClick={() => handleOptionClick(option)}
             className={`select-item ${
-              selectedOption === option ? 'same-as-selected' : ''
+              selectedOption === option ? "same-as-selected" : ""
             }`}
+            onClick={() => handleOptionClick(option)}
           >
-            <Link href={`/categories/${option.slug}`}>
-              {option.title}
-            </Link>
+            <Link href={`/categories/${option.slug}`}>{option.title}</Link>
           </div>
         ))}
       </div>

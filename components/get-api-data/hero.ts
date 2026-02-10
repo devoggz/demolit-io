@@ -1,5 +1,6 @@
-import { localDB } from "@/app/lib/local-db/client";
 import { unstable_cache } from "next/cache";
+
+import { localDB } from "@/app/lib/local-db/client";
 import { IHeroBanner, IHeroSlider } from "@/types/hero";
 
 /**

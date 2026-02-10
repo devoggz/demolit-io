@@ -29,12 +29,15 @@ export const localDB = {
       // Apply ordering
       if (options?.orderBy) {
         const [field, order] = Object.entries(options.orderBy)[0];
+
         banners.sort((a: any, b: any) => {
           const aVal = a[field];
           const bVal = b[field];
+
           if (order === "desc") {
             return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
           }
+
           return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
         });
       }
@@ -87,12 +90,15 @@ export const localDB = {
       // Apply ordering
       if (options?.orderBy) {
         const [field, order] = Object.entries(options.orderBy)[0];
+
         sliders.sort((a: any, b: any) => {
           const aVal = a[field];
           const bVal = b[field];
+
           if (order === "desc") {
             return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
           }
+
           return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
         });
       }
@@ -116,12 +122,15 @@ export const localDB = {
       // Apply ordering
       if (options?.orderBy) {
         const [field, order] = Object.entries(options.orderBy)[0];
+
         categories.sort((a: any, b: any) => {
           const aVal = a[field];
           const bVal = b[field];
+
           if (order === "desc") {
             return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
           }
+
           return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
         });
       }
@@ -144,6 +153,7 @@ export const localDB = {
         if (options.where.slug !== undefined) {
           return c.slug === options.where.slug;
         }
+
         return false;
       });
 
@@ -157,9 +167,12 @@ export const localDB = {
      */
     async findMany(options?: {
       orderBy?:
-          | { [key: string]: "asc" | "desc" }
-          | { reviews: { _count: "asc" | "desc" } }
-          | Array<{ [key: string]: "asc" | "desc" } | { reviews: { _count: "asc" | "desc" } }>;
+        | { [key: string]: "asc" | "desc" }
+        | { reviews: { _count: "asc" | "desc" } }
+        | Array<
+            | { [key: string]: "asc" | "desc" }
+            | { reviews: { _count: "asc" | "desc" } }
+          >;
       select?: { [key: string]: any };
       take?: number;
       where?: {
@@ -185,37 +198,51 @@ export const localDB = {
         // Filter out current product (for related products)
         if (options.where.id?.not) {
           const notId = options.where.id.not;
+
           products = products.filter((p: any) => p.id !== notId);
         }
 
         // Handle OR conditions (for related products)
-        if (options.where.OR && Array.isArray(options.where.OR) && options.where.OR.length > 0) {
+        if (
+          options.where.OR &&
+          Array.isArray(options.where.OR) &&
+          options.where.OR.length > 0
+        ) {
           const orConditions = options.where.OR;
+
           products = products.filter((p: any) => {
             return orConditions.some((condition: any) => {
               // Category match
               if (condition.category?.title?.contains) {
                 const categoryMatch =
-                    p.category?.title
-                        ?.toLowerCase()
-                        .includes(condition.category.title.contains.toLowerCase()) ?? false;
+                  p.category?.title
+                    ?.toLowerCase()
+                    .includes(
+                      condition.category.title.contains.toLowerCase(),
+                    ) ?? false;
+
                 if (categoryMatch) return true;
               }
 
               // Tags match
-              if (condition.tags?.hasSome && Array.isArray(condition.tags.hasSome)) {
+              if (
+                condition.tags?.hasSome &&
+                Array.isArray(condition.tags.hasSome)
+              ) {
                 const tagsMatch =
-                    p.tags?.some((tag: string) =>
-                        condition.tags.hasSome.includes(tag)
-                    ) ?? false;
+                  p.tags?.some((tag: string) =>
+                    condition.tags.hasSome.includes(tag),
+                  ) ?? false;
+
                 if (tagsMatch) return true;
               }
 
               // Title match
               if (condition.title?.contains) {
                 const titleMatch = p.title
-                    .toLowerCase()
-                    .includes(condition.title.contains.toLowerCase());
+                  .toLowerCase()
+                  .includes(condition.title.contains.toLowerCase());
+
                 if (titleMatch) return true;
               }
 
@@ -228,35 +255,39 @@ export const localDB = {
       // Apply ordering
       if (options?.orderBy) {
         const orderByArray = Array.isArray(options.orderBy)
-            ? options.orderBy
-            : [options.orderBy];
+          ? options.orderBy
+          : [options.orderBy];
 
         products.sort((a: any, b: any) => {
           for (const orderByItem of orderByArray) {
             // Handle reviews count ordering
             if (typeof orderByItem === "object" && "reviews" in orderByItem) {
-              const reviewsOrder = orderByItem.reviews as { _count: "asc" | "desc" };
+              const reviewsOrder = orderByItem.reviews as {
+                _count: "asc" | "desc";
+              };
               const order = reviewsOrder._count;
               const aVal = a.reviews || 0;
               const bVal = b.reviews || 0;
+
               if (aVal !== bVal) {
-                return order === "desc"
-                    ? bVal - aVal
-                    : aVal - bVal;
+                return order === "desc" ? bVal - aVal : aVal - bVal;
               }
             } else {
               // Handle regular field ordering
               const [field, order] = Object.entries(orderByItem)[0];
               const aVal = a[field];
               const bVal = b[field];
+
               if (aVal !== bVal) {
                 if (order === "desc") {
                   return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;
                 }
+
                 return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
               }
             }
           }
+
           return 0;
         });
       }
@@ -269,8 +300,10 @@ export const localDB = {
       // Apply select (field projection)
       if (options?.select) {
         const selectObj = options.select;
+
         products = products.map((product: any) => {
           const selected: any = {};
+
           Object.keys(selectObj).forEach((key) => {
             if (key === "_count") {
               // Handle review count
@@ -282,6 +315,7 @@ export const localDB = {
               selected[key] = product[key];
             }
           });
+
           return selected;
         });
       }
@@ -308,6 +342,7 @@ export const localDB = {
         if (options.where.slug !== undefined) {
           return p.slug === options.where.slug;
         }
+
         return false;
       });
 
@@ -325,6 +360,7 @@ export const localDB = {
       if (options?.select) {
         const selectObj = options.select;
         const selected: any = {};
+
         Object.keys(selectObj).forEach((key) => {
           if (key === "_count") {
             selected._count = { reviews: transformedProduct.reviews };
@@ -332,6 +368,7 @@ export const localDB = {
             selected[key] = transformedProduct[key];
           }
         });
+
         return selected;
       }
 

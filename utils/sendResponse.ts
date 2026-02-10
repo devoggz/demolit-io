@@ -1,6 +1,6 @@
-import { IGenericErrorMessage } from "@/types/response";
 import { NextResponse } from "next/server";
 
+import { IGenericErrorMessage } from "@/types/response";
 
 export const sendErrorResponse = (
   statusCode: number,
@@ -15,14 +15,14 @@ export const sendErrorResponse = (
       message,
       errorMessages: errorMessages || [],
     },
-    { status: statusCode }
+    { status: statusCode },
   );
 };
 
 export const sendSuccessResponse = <T>(
   statusCode: number,
   message: string,
-  data?: T
+  data?: T,
 ) => {
   return NextResponse.json(
     {
@@ -31,6 +31,6 @@ export const sendSuccessResponse = <T>(
       message,
       data,
     },
-    { status: statusCode }
+    { status: statusCode },
   );
 };

@@ -1,5 +1,6 @@
-import { EmptyCartIcon } from "@/app/assets/icons";
 import Link from "next/link";
+
+import { EmptyCartIcon } from "@/app/assets/icons";
 import { useCart } from "@/hooks/useCart";
 
 const EmptyCart = () => {
@@ -14,11 +15,11 @@ const EmptyCart = () => {
       <p className="pb-6">Your cart is empty!</p>
 
       <Link
+        className="w-full lg:w-10/12 mx-auto flex justify-center font-medium text-white bg-dark-6 py-[13px] px-6 rounded-lg ease-out duration-200 hover:bg-opacity-95"
+        href="/shop-with-sidebar"
         onClick={() => {
           handleCartClick();
         }}
-        href="/shop-with-sidebar"
-        className="w-full lg:w-10/12 mx-auto flex justify-center font-medium text-white bg-dark-6 py-[13px] px-6 rounded-lg ease-out duration-200 hover:bg-opacity-95"
       >
         Continue Shopping
       </Link>

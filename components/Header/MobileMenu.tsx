@@ -1,10 +1,12 @@
 "use client";
 
+import type { MenuItem } from "./types";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import type { MenuItem } from "./types";
-import { CloseIcon } from "./icons";
 import Image from "next/image";
+
+import { CloseIcon } from "./icons";
 
 interface MobileMenuProps {
   headerLogo: string | null;
@@ -13,13 +15,19 @@ interface MobileMenuProps {
   menuData: MenuItem[];
 }
 
-const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) => {
+const MobileMenu = ({
+  isOpen,
+  onClose,
+  menuData,
+  headerLogo,
+}: MobileMenuProps) => {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+
       if (
         isOpen &&
         !target.closest(".mobile-menu-container") &&
@@ -30,6 +38,7 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -52,7 +61,7 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
     setExpandedItems((prev) =>
       prev.includes(index)
         ? prev.filter((item) => item !== index)
-        : [...prev, index]
+        : [...prev, index],
     );
   };
 
@@ -78,18 +87,18 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
             <div>
               <Link className="block shrink-0" href="/">
                 <Image
-                  src={headerLogo || "/images/logo/logo-icon.svg"}
-                  alt="Logo"
-                  width={70}
-                  height={70}
                   priority
+                  alt="Logo"
+                  height={70}
+                  src={headerLogo || "/images/logo/logo-icon.svg"}
+                  width={70}
                 />
               </Link>
             </div>
             <button
-              onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 focus:outline-none"
               aria-label="Close menu"
+              className="text-gray-500 hover:text-gray-700 focus:outline-none"
+              onClick={onClose}
             >
               <CloseIcon />
             </button>
@@ -104,25 +113,25 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
                     {menuItem.submenu ? (
                       <div>
                         <button
-                          onClick={() => toggleSubmenu(i)}
                           className="flex items-center justify-between w-full px-4 py-3 text-sm text-gray-800 rounded-lg hover:text-blue text-dark hover:bg-gray-2"
+                          onClick={() => toggleSubmenu(i)}
                         >
                           <span className="font-medium">{menuItem.title}</span>
                           <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
                             className={`transition-transform duration-200 ${
                               expandedItems.includes(i) ? "rotate-180" : ""
                             }`}
+                            fill="none"
+                            height="16"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <polyline points="6 9 12 15 18 9"></polyline>
+                            <polyline points="6 9 12 15 18 9" />
                           </svg>
                         </button>
 
@@ -136,8 +145,8 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
                             {menuItem.submenu.map((subItem, j) => (
                               <Link
                                 key={j}
-                                href={subItem.path || "#"}
                                 className="block px-4 py-3 text-sm rounded-lg hover:bg-gray-2 text-dark border-gray-3 hover:text-blue "
+                                href={subItem.path || "#"}
                                 onClick={onClose}
                               >
                                 {subItem.title}
@@ -148,8 +157,8 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
                       </div>
                     ) : (
                       <Link
-                        href={menuItem.path || "#"}
                         className="block px-4 py-3 text-sm font-medium rounded-lg hover:text-blue text-dark hover:bg-gray-2"
+                        href={menuItem.path || "#"}
                         onClick={onClose}
                       >
                         {menuItem.title}
@@ -165,15 +174,15 @@ const MobileMenu = ({ isOpen, onClose, menuData, headerLogo }: MobileMenuProps) 
           <div className="p-4 border-t border-gray-3">
             <div className="flex items-center gap-3">
               <Link
-                href="/"
                 className="flex items-center text-sm font-medium text-blue-600 hover:text-blue-800"
+                href="/"
                 onClick={onClose}
               >
                 Sign In
               </Link>
               <Link
-                href="/"
                 className="flex items-center text-sm font-medium text-blue-600 hover:text-blue-800"
+                href="/"
                 onClick={onClose}
               >
                 Create an account

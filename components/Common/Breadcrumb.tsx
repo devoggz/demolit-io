@@ -3,7 +3,6 @@
 import type React from "react";
 
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
 
 // Define the breadcrumb item type
@@ -50,16 +49,16 @@ const Breadcrumb = ({
                     <li key={index} className="flex items-center">
                       {isLast ? (
                         <span
-                          className="font-medium text-custom-sm text-blue"
                           aria-current="page"
+                          className="font-medium text-custom-sm text-blue"
                         >
                           {item.label}
                         </span>
                       ) : (
                         <>
                           <Link
-                            href={item.href}
                             className="text-gray-600 transition-colors text-custom-sm hover:text-blue"
+                            href={item.href}
                           >
                             {item.label}
                           </Link>
@@ -116,16 +115,16 @@ export const AdminBreadcrumb = ({
                     <li key={index} className="flex items-center">
                       {isLast ? (
                         <span
-                          className="font-medium text-custom-sm text-blue"
                           aria-current="page"
+                          className="font-medium text-custom-sm text-blue"
                         >
                           {item.label}
                         </span>
                       ) : (
                         <>
                           <Link
-                            href={item.href}
                             className="text-gray-600 transition-colors text-custom-sm hover:text-blue"
+                            href={item.href}
                           >
                             {item.label}
                           </Link>
@@ -150,7 +149,7 @@ export const AdminBreadcrumb = ({
 function generateBreadcrumbsFromPath(
   pathname: string,
   homeLabel = "Home",
-  homeHref = "/"
+  homeHref = "/",
 ): BreadcrumbItem[] {
   // Start with home
   const breadcrumbs: BreadcrumbItem[] = [{ label: homeLabel, href: homeHref }];

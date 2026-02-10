@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useCart } from "@/hooks/useCart";
+
 import { menuData } from "./menuData";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
@@ -14,8 +14,11 @@ import {
   MenuIcon,
   CloseIcon,
 } from "./icons";
+
+import { useCart } from "@/hooks/useCart";
 import { HeaderSetting } from "@/types/header-setting";
 import { useAppSelector } from "@/redux/store";
+import {ThemeSwitch} from "@/components/theme-switch";
 
 type IProps = {
   headerData?: HeaderSetting | null;
@@ -44,6 +47,7 @@ const MainHeader = ({ headerData }: IProps) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleStickyMenu);
+
     return () => {
       window.removeEventListener("scroll", handleStickyMenu);
     };
@@ -58,6 +62,7 @@ const MainHeader = ({ headerData }: IProps) => {
     };
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -71,24 +76,24 @@ const MainHeader = ({ headerData }: IProps) => {
         }`}
       >
         {/* Topbar */}
-        <div className="bg-dark-6 py-2">
+        <div className="bg-dark-6 py-1">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 xl:px-0">
             <div className="flex justify-between">
               <div className="hidden lg:block">
-                <p className="text-xs font-medium text-white">
+                <p className="text-xs font-bold text-white">
                   {headerData?.headerText || "Free delivery around Kakamega"}
                 </p>
               </div>
               <div className="flex divide-x divide-white/20">
                 <Link
-                  href="/signup"
                   className="pr-3 text-sm font-medium text-white transition hover:text-blue-300"
+                  href="/signup"
                 >
                   Create an account
                 </Link>
                 <Link
-                  href="#"
                   className="pl-3 text-sm font-medium text-white transition hover:text-blue-300"
+                  href="#"
                 >
                   {"Sign In"}
                 </Link>
@@ -105,11 +110,11 @@ const MainHeader = ({ headerData }: IProps) => {
               <Link className="block py-2 shrink-0" href="/">
                 <div className="flex items-center gap-1">
                   <Image
-                    src={headerData?.headerLogo || "/images/logo/logo.svg"}
-                    alt="Logo"
-                    width={120}
-                    height={40}
                     priority
+                    alt="Logo"
+                    height={40}
+                    src={headerData?.headerLogo || "/images/logo/logo.svg"}
+                    width={120}
                   />
                 </div>
               </Link>
@@ -122,49 +127,50 @@ const MainHeader = ({ headerData }: IProps) => {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-3">
+              <ThemeSwitch/>
               <button
+                aria-label="Search"
                 className="transition hover:text-green-bright focus:outline-none"
                 onClick={() => setSearchModalOpen(true)}
-                aria-label="Search"
               >
                 <SearchIcon />
               </button>
 
               <Link
-                href="#"
-                className="transition hover:text-green-bright focus:outline-none"
                 aria-label="Account"
+                className="transition hover:text-green-bright focus:outline-none"
+                href="#"
               >
                 <UserIcon />
               </Link>
 
               <Link
-                href="/wishlist"
-                className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
                 aria-label="Wishlist"
+                className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
+                href="/wishlist"
               >
                 <HeartIcon />
-                <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-red-600 text-[10px] font-normal rounded-full inline-flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-green-bright text-[10px] font-normal rounded-full inline-flex items-center justify-center">
                   {wishlistCount}
                 </span>
               </Link>
 
               <button
+                aria-label="Cart"
                 className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
                 onClick={handleOpenCartModal}
-                aria-label="Cart"
               >
                 <CartIcon />
-                <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-red-600 text-[10px] font-normal rounded-full inline-flex items-center justify-center">
+                <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-green-bright text-[10px] font-normal rounded-full inline-flex items-center justify-center">
                   {cartCount || 0}
                 </span>
               </button>
 
               {/* Mobile Menu Toggle */}
               <button
+                aria-label={navigationOpen ? "Close menu" : "Open menu"}
                 className="transition xl:hidden focus:outline-none"
                 onClick={() => setNavigationOpen(!navigationOpen)}
-                aria-label={navigationOpen ? "Close menu" : "Open menu"}
               >
                 {navigationOpen ? <CloseIcon /> : <MenuIcon />}
               </button>
@@ -173,12 +179,11 @@ const MainHeader = ({ headerData }: IProps) => {
         </div>
       </header>
 
-
       <MobileMenu
         headerLogo={headerData?.headerLogo || null}
         isOpen={navigationOpen}
-        onClose={() => setNavigationOpen(false)}
         menuData={menuData}
+        onClose={() => setNavigationOpen(false)}
       />
     </>
   );

@@ -1,8 +1,9 @@
 // components/ui/Tooltip.tsx
 "use client";
 
-import { useState, useRef } from "react";
 import type { ReactNode } from "react";
+
+import { useState, useRef } from "react";
 
 interface TooltipProps {
   content: ReactNode;

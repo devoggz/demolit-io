@@ -1,10 +1,6 @@
 import Image from "next/image";
 
 const paymentsData = [
-
-
-
-
   {
     id: 1,
     image: "/images/payment/payment-06.svg",
@@ -35,8 +31,8 @@ export default function FooterBottom() {
     <div className="py-5 xl:py-7.5 border-t border-gray-5">
       <div className="px-4 mx-auto max-w-7xl sm:px-8 xl:px-0">
         <div className="flex flex-wrap items-center justify-between gap-5">
-          <p className="text-sm font-normal text-dark">
-            &copy; {year}. All rights reserved. Kalawaks Studio.
+          <p className="text-sm font-normal text-dark-6">
+             All rights reserved. &copy; {year}. Kalawaks Studio.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -45,12 +41,12 @@ export default function FooterBottom() {
             <div className="flex flex-wrap items-center gap-5">
               {paymentsData.map((payment) => (
                 <Image
-                  className="h-8"
                   key={payment?.id}
-                  src={payment.image}
                   alt={payment.alt}
-                  width={payment.width}
+                  className="h-8"
                   height={payment.height}
+                  src={payment.image}
+                  width={payment.width}
                 />
               ))}
             </div>

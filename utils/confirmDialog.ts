@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 export const confirmDialog = async (
   title: string,
   text: string,
-  confirmButtonText = "Yes, delete it!"
+  confirmButtonText = "Yes, delete it!",
 ): Promise<boolean> => {
   const result = await Swal.fire({
     title,
@@ -25,10 +25,10 @@ export const confirmDialog = async (
   return result.isConfirmed;
 };
 
-/* 
+/*
  * success dialog
  * @param {string} title - Title of the dialog
-*/
+ */
 export const successDialog = (title: string) => {
   return Swal.fire({
     title,
@@ -36,11 +36,10 @@ export const successDialog = (title: string) => {
   });
 };
 
-
-/* 
+/*
  * error dialog
  * @param {string} title - Title of the dialog
-*/
+ */
 export const errorDialog = (title: string) => {
   return Swal.fire({
     title,

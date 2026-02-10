@@ -1,4 +1,3 @@
-
 // Generic error message interface (assuming this exists elsewhere)
 interface IGenericErrorMessage {
   path: string;
@@ -25,7 +24,7 @@ interface SuccessResponse<T> {
 export const errorResponse = (
   statusCode: number,
   message: string,
-  errorMessages?: IGenericErrorMessage[]
+  errorMessages?: IGenericErrorMessage[],
 ): ErrorResponse => {
   return {
     statusCode,
@@ -39,7 +38,7 @@ export const errorResponse = (
 export const successResponse = <T>(
   statusCode: number,
   message: string,
-  data?: T
+  data?: T,
 ): SuccessResponse<T> => {
   return {
     statusCode,

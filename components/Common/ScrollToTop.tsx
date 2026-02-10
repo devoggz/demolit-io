@@ -1,6 +1,7 @@
 "use client";
-import { ChevronUpIcon } from "@/app/assets/icons";
 import { useEffect, useState } from "react";
+
+import { ChevronUpIcon } from "@/app/assets/icons";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,10 +34,10 @@ export default function ScrollToTop() {
     <>
       {isVisible && (
         <button
-          onClick={scrollToTop}
           className={`items-center justify-center w-10 h-10 rounded-lg shadow-lg bg-dark-6 ease-out duration-200 hover:bg-green-bright fixed bottom-8 right-8 z-999 ${
             isVisible ? "flex" : "hidden"
           }`}
+          onClick={scrollToTop}
         >
           <ChevronUpIcon className="fill-white size-5" />
         </button>

@@ -1,7 +1,8 @@
-import { ArrowLeftIcon } from "@/app/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { ArrowLeftIcon } from "@/app/assets/icons";
 
 export default function NotFound() {
   return (
@@ -10,11 +11,11 @@ export default function NotFound() {
         <div className="px-4 py-10 bg-white rounded-xl shadow-1 sm:py-15 lg:py-20 xl:py-25">
           <div className="text-center">
             <Image
-              src="/images/404.svg"
               alt="404"
               className="w-1/2 mx-auto mb-8 sm:w-auto"
-              width={288}
               height={190}
+              src="/images/404.svg"
+              width={288}
             />
 
             <h2 className="mb-3 text-xl font-medium text-dark sm:text-2xl">
@@ -27,8 +28,8 @@ export default function NotFound() {
             </p>
 
             <Link
-              href="/"
               className="inline-flex items-center gap-2 px-6 py-3 font-medium text-white duration-200 ease-out rounded-md bg-blue hover:bg-blue-dark"
+              href="/"
             >
               <ArrowLeftIcon />
               Back to Home

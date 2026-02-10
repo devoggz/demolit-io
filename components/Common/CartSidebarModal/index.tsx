@@ -1,12 +1,14 @@
 "use client";
-import { CloseLine } from "@/app/assets/icons";
 import Link from "next/link";
 import { useEffect } from "react";
-import { useCart } from "@/hooks/useCart";
+import { useRouter } from "next/navigation";
+
 import EmptyCart from "./EmptyCart";
 import SingleItem from "./SingleItem";
+
+import { CloseLine } from "@/app/assets/icons";
+import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/utils/formatePrice";
-import { useRouter } from "next/navigation";
 
 const CartSidebarModal = () => {
   const {
@@ -43,23 +45,25 @@ const CartSidebarModal = () => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 z-9999 overflow-y-auto no-scrollbar w-full h-screen bg-dark/70 ease-linear duration-300 ${shouldDisplayCart ? "block" : "hidden"
-          }`}
-      ></div>
+        className={`fixed top-0 left-0 z-9999 overflow-y-auto no-scrollbar w-full h-screen bg-dark/70 ease-linear duration-300 ${
+          shouldDisplayCart ? "block" : "hidden"
+        }`}
+      />
 
       {/* <div className="flex items-center justify-end"> */}
       <div
-        className={`${shouldDisplayCart ? "translate-x-0" : "translate-x-full"
-          } fixed z-999999 w-full h-screen max-w-[470px] ease-linear duration-300 shadow-1 bg-white px-4 sm:px-7.5 lg:px-10 top-0 right-0 modal-content flex flex-col`}
+        className={`${
+          shouldDisplayCart ? "translate-x-0" : "translate-x-full"
+        } fixed z-999999 w-full h-screen max-w-[470px] ease-linear duration-300 shadow-1 bg-white px-4 sm:px-7.5 lg:px-10 top-0 right-0 modal-content flex flex-col`}
       >
         <div className="sticky top-0 bg-white flex items-center justify-between pb-7 pt-4 sm:pt-7.5 lg:pt-10 border-b border-gray-3 mb-7.5">
           <h2 className="text-lg font-medium text-dark sm:text-2xl">
             Cart View
           </h2>
           <button
-            onClick={() => handleCartClick()}
             aria-label="button for close modal"
             className="flex items-center justify-center duration-150 ease-in text-dark-5 hover:text-dark"
+            onClick={() => handleCartClick()}
           >
             <CloseLine />
           </button>
@@ -91,16 +95,16 @@ const CartSidebarModal = () => {
 
           <div className="flex items-center gap-4">
             <Link
-              onClick={() => handleCartClick()}
-              href="/cart"
               className="flex justify-center w-full px-6 py-3 text-base font-medium text-white duration-200 ease-out rounded-lg bg-dark-6 hover:bg-green-bright"
+              href="/cart"
+              onClick={() => handleCartClick()}
             >
               View Cart
             </Link>
 
             <button
-              onClick={() => handleCheckout()}
               className="flex justify-center w-full px-6 py-3 text-base font-medium text-white duration-200 ease-out rounded-lg bg-green-bright hover:bg-green-dark"
+              onClick={() => handleCheckout()}
             >
               Checkout
             </button>

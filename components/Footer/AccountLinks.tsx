@@ -22,6 +22,7 @@ const accountLinks = [
     href: "/shop-with-sidebar",
   },
 ];
+
 export default function AccountLinks() {
   return (
     <div className="w-full sm:w-auto">
