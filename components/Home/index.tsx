@@ -3,6 +3,7 @@ import Categories from "./Categories";
 import Hero from "./Hero";
 import NewArrival from "./NewArrivals";
 import PromoBanner from "./PromoBanner";
+import BestSeller from "@/components/Home/BestSeller";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Categories />
             <NewArrival />
             <PromoBanner />
+            <BestSeller/>
             <Newsletter />
         </main>
     );

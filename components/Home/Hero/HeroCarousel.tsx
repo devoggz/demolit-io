@@ -60,7 +60,7 @@ const HeroCarousel = ({ sliders }: { sliders: IHeroSlider[] }) => {
                             </p>
                             <Link
                                 href="/shop-with-sidebar"
-                                className="inline-flex py-3 mt-10 font-medium text-white duration-200 ease-out rounded-lg text-custom-sm bg-green-bright/80 px-9 hover:bg-dark"
+                                className="inline-flex py-3 mt-10 font-medium text-white duration-200 ease-out rounded-lg text-custom-sm bg-green-bright/80 px-9 hover:bg-green-bright/50"
                             >
                                 Shop Now
                             </Link>

@@ -9,13 +9,20 @@ const paymentsData = [
     id: 1,
     image: "/images/payment/payment-06.svg",
     alt: "mpesa pay",
-    width: 64,
-    height: 30,
+    width: 35,
+    height: 24,
   },
   {
     id: 2,
     image: "/images/payment/payment-03.svg",
     alt: "master card",
+    width: 33,
+    height: 24,
+  },
+  {
+    id: 3,
+    image: "/images/payment/payment-01.svg",
+    alt: "Visa",
     width: 33,
     height: 24,
   },
@@ -29,7 +36,7 @@ export default function FooterBottom() {
       <div className="px-4 mx-auto max-w-7xl sm:px-8 xl:px-0">
         <div className="flex flex-wrap items-center justify-between gap-5">
           <p className="text-sm font-normal text-dark">
-            &copy; {year}. All rights reserved by Kalawaks.
+            &copy; {year}. All rights reserved. Kalawaks Studio.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -38,7 +45,7 @@ export default function FooterBottom() {
             <div className="flex flex-wrap items-center gap-5">
               {paymentsData.map((payment) => (
                 <Image
-                  className="h-5"
+                  className="h-8"
                   key={payment?.id}
                   src={payment.image}
                   alt={payment.alt}

@@ -47,7 +47,7 @@ export default function CategoryCarouselArea({
             {/* <!-- section title --> */}
             <div className="flex items-center justify-between mb-16">
                 <div>
-                    <h2 className="text-xl font-semibold xl:text-heading-5 text-dark">
+                    <h2 className="text-xl font-semibold xl:text-heading-5 text-dark-6">
                         Browse by Category
                     </h2>
                 </div>
@@ -67,7 +67,7 @@ export default function CategoryCarouselArea({
                     <button
                         onClick={handleNext}
                         className={`swiper-button-next ${
-                            isEnd ? "opacity-50 pointer-events-none" : ""
+                            isEnd ? "opacity-50 pointer-events-none " : ""
                         }`}
                         aria-label="next button"
                         disabled={isEnd}

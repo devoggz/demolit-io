@@ -4,17 +4,17 @@ const quickLinks = [
   {
     id: 1,
     label: "Privacy Policy",
-    href: "/privacy-policy",
+    href: "#",
   },
   {
     id: 2,
     label: "Refund Policy",
-    href: "/terms-conditions",
+    href: "#",
   },
   {
     id: 3,
     label: "Terms of Use",
-    href: "/terms-condition",
+    href: "#",
   },
   {
     id: 4,
@@ -24,20 +24,20 @@ const quickLinks = [
   {
     id: 5,
     label: "Contact",
-    href: "/contact",
+    href: "#",
   },
 ];
 
 export default function QuickLinks() {
   return (
     <div className="w-full sm:w-auto">
-      <h2 className="mb-7.5 text-xl font-semibold text-dark">Quick Link</h2>
+      <h2 className="mb-7.5 text-xl font-semibold text-dark-6">Quick Link</h2>
 
       <ul className="flex flex-col gap-3">
         {quickLinks.map((link) => (
           <li key={link.id}>
             <Link
-              className="text-base duration-200 ease-out hover:text-blue"
+              className="text-base duration-200 ease-out hover:text-green-bright"
               href={link.href}
             >
               {link.label}

@@ -31,7 +31,7 @@ const WishlistButton = ({ item, handleItemToWishList }: IProps) => {
       <button
         onClick={handleItemToWishList}
         aria-label="button for favorite select"
-        className="flex items-center justify-center duration-200 h-[38px] w-[38px] ease-out bg-white border rounded-lg border-gray-3   text-dark hover:text-blue"
+        className="flex items-center justify-center duration-200 h-[38px] w-[38px] ease-out bg-white border rounded-lg border-gray-3   text-dark-6 hover:text-green-bright"
       >
         {isAlreadyWishListed ? (
           <HeartSolid />

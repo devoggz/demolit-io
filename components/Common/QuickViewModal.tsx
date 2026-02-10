@@ -143,13 +143,13 @@ const QuickViewModal = () => {
       {product?.title && (
         <div
           className={`${isModalOpen ? "z-99999" : "hidden"
-            } fixed top-0 left-0 o overflow-y-scroll no-scrollbar max-h-[100vh] w-full sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
+            } fixed top-0 left-0  overflow-y-scroll no-scrollbar max-h-[100vh] w-full sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
         >
           <div className="flex items-center justify-center ">
             <div className="w-full max-w-[1100px] rounded-xl shadow-3 bg-white p-7.5 relative modal-content">
               <button
                 onClick={() => closeModal()}
-                className="absolute top-0 right-0 flex items-center justify-center duration-150 ease-in rounded-full sm:top-6 sm:right-6 text-body hover:text-dark"
+                className="absolute top-0 right-0 flex items-center justify-center duration-150 ease-in rounded-full sm:top-6 sm:right-6 text-body hover:text-dark-6"
               >
                 <span className="sr-only">Close modal</span>
                 <CloseLine />
@@ -163,7 +163,7 @@ const QuickViewModal = () => {
                         <button
                           onClick={() => setActivePreview(key)}
                           key={key}
-                          className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-blue ${activePreview === key && "border-2 border-blue"
+                          className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-green-bright ${activePreview === key && "border-2 border-green-bright"
                             }`}
                         >
                           <Image
@@ -181,7 +181,7 @@ const QuickViewModal = () => {
                       <div>
                         <button
                           onClick={handlePreviewSlider}
-                          className="absolute z-50 flex items-center justify-center w-10 h-10 duration-200 ease-out bg-white rounded-lg gallery__Image shadow-1 text-dark hover:text-blue top-4 lg:top-8 right-4 lg:right-8"
+                          className="absolute z-50 flex items-center justify-center w-10 h-10 duration-200 ease-out bg-white rounded-lg gallery__Image shadow-1 text-dark-6 hover:text-green-bright top-4 lg:top-8 right-4 lg:right-8"
                         >
                           <span className="sr-only">Fullscreen</span>
                           <FullScreenIcon />
@@ -205,7 +205,7 @@ const QuickViewModal = () => {
                 <div className="max-w-[445px] w-full">
                   {product.discountedPrice &&
                     product.discountedPrice < product.price && (
-                      <span className="inline-block text-custom-xs uppercase rounded-full font-medium text-white py-1 px-3 bg-green mb-6.5">
+                      <span className="inline-block text-custom-xs uppercase rounded-full font-medium text-white py-1 px-3 bg-green-bright mb-6.5">
                         sale {""}
                         {Math.round(
                           ((product.price - product.discountedPrice) /
@@ -216,7 +216,7 @@ const QuickViewModal = () => {
                       </span>
                     )}
 
-                  <h3 className="mb-4 text-xl font-semibold xl:text-heading-5 text-dark">
+                  <h3 className="mb-4 text-xl font-semibold xl:text-heading-5 text-dark-6">
                     {product.title}
                   </h3>
 
@@ -239,8 +239,8 @@ const QuickViewModal = () => {
                     <div className="flex items-center gap-2">
                       {product.quantity > 0 ? (
                         <>
-                          <CircleCheckIcon className="fill-green" />
-                          <span className="text-dark"> In Stock </span>
+                          <CircleCheckIcon className="fill-green-bright" />
+                          <span className="text-dark-6"> In Stock </span>
                         </>
                       ) : (
                         <>
@@ -284,14 +284,14 @@ const QuickViewModal = () => {
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => setQuantity(quantity + 1)}
-                          className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark hover:text-blue"
+                          className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark-6 hover:text-green-bright"
                         >
                           <span className="sr-only">Increase quantity</span>
                           <PlusIcon />
                         </button>
 
                         <span
-                          className="flex items-center justify-center w-20 h-10 font-medium bg-white border rounded-lg border-gray-4 text-dark"
+                          className="flex items-center justify-center w-20 h-10 font-medium bg-white border rounded-lg border-gray-4 text-dark-6"
                           x-text="quantity"
                         >
                           {quantity}
@@ -301,7 +301,7 @@ const QuickViewModal = () => {
                           onClick={() =>
                             quantity > 1 && setQuantity(quantity - 1)
                           }
-                          className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark hover:text-blue"
+                          className="flex items-center justify-center w-10 h-10 duration-200 ease-out rounded-lg bg-gray-2 text-dark-6 hover:text-green-bright"
                           disabled={quantity <= 1}
                         >
                           <span className="sr-only">Decrease quantity</span>
@@ -315,7 +315,7 @@ const QuickViewModal = () => {
                     <button
                       disabled={quantity < 1 || product.quantity < 1}
                       onClick={() => handleAddToCart()}
-                      className="inline-flex py-3 font-medium text-white duration-200 ease-out rounded-lg bg-blue px-7 hover:bg-blue-dark"
+                      className="inline-flex py-3 font-medium text-white duration-200 ease-out rounded-lg bg-green-bright px-7 hover:bg-green-bright/80"
                     >
                       {product.quantity > 0 ? "Add to Cart" : "Out of Stock"}
                     </button>
@@ -323,7 +323,7 @@ const QuickViewModal = () => {
                     <button
                       disabled={isAlreadyInWishlist}
                       onClick={() => handleAddToWishlist()}
-                      className="inline-flex items-center gap-2 px-6 py-3 font-medium text-white duration-200 ease-out rounded-lg bg-dark hover:bg-opacity-95"
+                      className="inline-flex items-center gap-2 px-7 py-3 font-medium text-white duration-200 ease-out rounded-lg bg-dark-6 hover:bg-green-bright"
                     >
                       <HeartIcon />
                       {isAlreadyInWishlist

@@ -19,18 +19,24 @@ export default function LargePromoBanner({
   buttonText,
 }: LargePromoBannerProps) {
   return (
-    <div className="relative z-1 overflow-hidden rounded-2xl bg-gray-2 py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5">
+    <div
+        style={{
+      backgroundBlendMode: 'soft-light',
+      backgroundImage: `url('/images/hero/pattern.svg')`,
+      backgroundSize: 'auto'
+    }}
+          className="relative hidden lg:block  z-1 overflow-hidden rounded-2xl bg-dark-6 py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5">
       <div className="max-w-[550px] w-full">
-        <span className="block mb-3 text-xl font-medium text-dark">
+        <span className="block mb-3 text-xl font-medium text-meta-4">
           {subtitle}
         </span>
-        <h2 className="mb-5 text-xl font-semibold lg:text-heading-4 xl:text-heading-3 text-dark">
+        <h2 className="mb-5 text-xl font-semibold lg:text-heading-4 xl:text-heading-3 text-green-bright">
           {title}
         </h2>
-        <p>{description}</p>
+        <p className="text-meta-4">{description}</p>
         <Link
           href={`/products/${link}`}
-          className="inline-flex font-medium text-custom-sm text-white bg-dark-6 py-3 px-7 rounded-lg  ease-out duration-200 hover:bg-green-bright mt-7.5"
+          className="inline-flex font-medium text-custom-sm text-white bg-green-bright py-3 px-7 rounded-lg  ease-out duration-200 hover:bg-green-bright/80 mt-7.5"
         >
           {buttonText}
         </Link>

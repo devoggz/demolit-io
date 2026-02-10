@@ -33,7 +33,7 @@ const ProductItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
     const router = useRouter();
     const pathUrl = usePathname();
 
-    const isAlradyAdded = Object.values(cartDetails ?? {}).some(
+    const isAlreadyAdded = Object.values(cartDetails ?? {}).some(
         (cartItem) => cartItem.id === item.id
     );
 
@@ -41,7 +41,7 @@ const ProductItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
         id: item.id,
         name: item.title,
         price: item.discountedPrice ? item.discountedPrice : item.price,
-        currency: "usd",
+        currency: "kes",
         image: defaultVariant?.image ? defaultVariant.image : "",
         slug: item?.slug,
         availableQuantity: item.quantity,
@@ -134,7 +134,7 @@ const ProductItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
                         </button>
                     </Tooltip>
 
-                    {isAlradyAdded ? (
+                    {isAlreadyAdded ? (
                         <div onClick={(e) => e.stopPropagation()}>
                             <CheckoutBtn />
                         </div>

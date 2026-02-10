@@ -42,7 +42,7 @@ export default function WishlistClient() {
         return (
             <div className="min-h-screen flex items-center justify-center py-24">
                 <div className="text-center max-w-md">
-                    <h1 className="text-3xl font-bold text-dark mb-3">
+                    <h1 className="text-3xl font-bold text-dark-6 mb-3">
                         Your wishlist is empty
                     </h1>
                     <p className="text-dark-4 mb-6">
@@ -50,7 +50,7 @@ export default function WishlistClient() {
                     </p>
                     <button
                         onClick={() => router.push("/shop-with-sidebar")}
-                        className="px-6 py-3 bg-blue text-white rounded-lg hover:bg-blue-dark transition"
+                        className="px-6 py-3 bg-dark-6 text-white rounded-lg hover:bg-green-bright transition"
                     >
                         Browse products
                     </button>
@@ -60,14 +60,12 @@ export default function WishlistClient() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-20">
+        <div className="min-h-screen max-w-7xl bg-gray-50 py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-0">
 
                 <div className="mb-10">
-                    <h1 className="text-3xl font-bold text-dark">My Wishlist</h1>
-                    <p className="text-dark-4">
-                        Emotionally curated capitalism.
-                    </p>
+                    <h1 className="text-3xl font-bold text-dark-6">My Wishlist</h1>
+
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -80,7 +78,7 @@ export default function WishlistClient() {
                                 <div className="relative w-full h-48 bg-gray-100 rounded-xl overflow-hidden mb-4">
                                     <Image
                                         src={item.image || "/images/placeholder.png"}
-                                        alt={item.title} // ✅ title not name
+                                        alt={item.title}
                                         fill
                                         className="object-contain p-3"
                                     />
@@ -90,7 +88,7 @@ export default function WishlistClient() {
                             <div className="flex-1">
                                 <Link href={`/product/${item.slug}`}>
                                     <h3 className="font-semibold text-dark line-clamp-2 hover:text-blue transition">
-                                        {item.title} {/* ✅ title */}
+                                        {item.title}
                                     </h3>
                                 </Link>
 
@@ -102,7 +100,7 @@ export default function WishlistClient() {
                             <div className="mt-4 flex gap-2">
                                 <button
                                     onClick={() => handleAddToCart(item)}
-                                    className="flex-1 py-2 text-sm bg-blue text-white rounded-lg hover:bg-blue-dark transition"
+                                    className="flex-1 py-2 text-sm bg-dark-6 text-white rounded-lg hover:bg-green-bright transition"
                                 >
                                     Add to Cart
                                 </button>

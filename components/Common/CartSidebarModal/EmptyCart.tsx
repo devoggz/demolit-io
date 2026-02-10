@@ -18,7 +18,7 @@ const EmptyCart = () => {
           handleCartClick();
         }}
         href="/shop-with-sidebar"
-        className="w-full lg:w-10/12 mx-auto flex justify-center font-medium text-white bg-dark py-[13px] px-6 rounded-lg ease-out duration-200 hover:bg-opacity-95"
+        className="w-full lg:w-10/12 mx-auto flex justify-center font-medium text-white bg-dark-6 py-[13px] px-6 rounded-lg ease-out duration-200 hover:bg-opacity-95"
       >
         Continue Shopping
       </Link>

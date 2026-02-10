@@ -52,7 +52,7 @@ export const getNewArrivalsProduct = unstable_cache(
     { tags: ["products"] }
 );
 
-// Get best selling products
+// Get bestselling products
 export const getBestSellingProducts = unstable_cache(
     async (): Promise<Product[]> => {
         const products = await localDB.product.findMany({

@@ -5,11 +5,15 @@ import { IHeroBanner } from "@/types/hero";
 
 export default function HeroBannerItem({ bannerItem }: { bannerItem: IHeroBanner }) {
     return (
-        <div className="relative w-full flex-1 px-6 bg-dark-6 border rounded-2xl border-gray-2">
+        <div style={{
+            backgroundBlendMode: 'soft-light',
+            backgroundImage: `url('/images/hero/pattern.svg')`,
+            backgroundSize: 'auto'
+        }} className="relative w-full flex-1 px-6 bg-dark-6 border rounded-2xl border-gray-2">
             <div className="flex items-center justify-between gap-5 h-full py-6">
                 <div className="w-1/2 flex flex-col justify-center">
                     <div className="mb-8">
-                        <h2 className="max-w-[153px] font-semibold text-meta-5 text-xl hover:text-blue mb-2">
+                        <h2 className="max-w-[153px] font-semibold text-green-bright text-xl hover:text-meta-4 mb-2">
                             <Link href={`/products/${bannerItem?.product?.slug}`}>
                                 {bannerItem.bannerName}
                             </Link>
@@ -23,7 +27,7 @@ export default function HeroBannerItem({ bannerItem }: { bannerItem: IHeroBanner
                             limited time offer
                         </p>
                         <span className="flex items-center gap-2.5">
-              <span className="font-bold text-md text-green-bright">
+              <span className="font-bold text-md text-meta-5">
                 {formatPrice(
                     bannerItem?.product?.discountedPrice
                         ? bannerItem?.product?.discountedPrice

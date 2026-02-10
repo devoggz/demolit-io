@@ -21,8 +21,8 @@ const aboutData = [
 
 export default function FooterAbout() {
   return (
-    <div className="max-w-[330px] w-full">
-      <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
+    <div className="max-w-[300px] w-full">
+      <h2 className="mb-7.5 text-custom-1 font-medium text-dark-6">
         Help & Support
       </h2>
 

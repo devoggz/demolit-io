@@ -17,7 +17,7 @@ export default async function SiteLayout({
     const headerSettingData = await getHeaderSettings();
 
     return (
-        <div>
+        <div >
             <PreLoader />
             <>
                 <Providers>

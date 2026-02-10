@@ -1,7 +1,4 @@
-/**
- * Product type definition
- * Used for listings, category pages, grids, etc.
- */
+
 export interface Product {
     id: string;
     title: string;
@@ -9,11 +6,9 @@ export interface Product {
     discountedPrice?: number | null;
     slug: string;
     quantity: number;
-    updatedAt: Date | string; // Date from Prisma, string after serialization
+    updatedAt: Date | string;
     reviews: number;
     shortDescription: string;
-
-    // ✅ ADD THIS — required for category filtering
     category?: {
         title: string;
         slug?: {
@@ -29,10 +24,6 @@ export interface Product {
     }[];
 }
 
-/**
- * Detailed product type
- * Used for product detail pages
- */
 export interface IProductByDetails {
     id: string;
     title: string;
@@ -43,8 +34,6 @@ export interface IProductByDetails {
     slug: string;
     quantity: number;
     updatedAt: Date | string;
-
-    // ✅ Slug shape matches Sanity-style slug usage
     category: {
         title: string;
         slug?: {
@@ -80,10 +69,6 @@ export interface IProductByDetails {
     sku: string | null;
 }
 
-/**
- * Product with ID and Title only
- * Used for lightweight queries
- */
 export interface ProductIdAndTitle {
     id: string;
     title: string;

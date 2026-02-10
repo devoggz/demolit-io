@@ -236,7 +236,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                         {selectedVariant?.color && (
                             <div className="mb-6">
                                 <p className="text-sm font-medium text-dark mb-3">
-                                    Color: <span className="text-blue font-semibold">{selectedVariant.color}</span>
+                                    Color: <span className="text-dark-6 font-semibold">{selectedVariant.color}</span>
                                 </p>
                             </div>
                         )}
@@ -245,7 +245,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                         {selectedVariant?.size && (
                             <div className="mb-6">
                                 <p className="text-sm font-medium text-dark mb-3">
-                                    Size: <span className="text-blue font-semibold">{selectedVariant.size}</span>
+                                    Size: <span className="text-dark-6 font-semibold">{selectedVariant.size}</span>
                                 </p>
                             </div>
                         )}
@@ -287,7 +287,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                                 {/* Add to Cart Button */}
                                 <button
                                     onClick={handleAddToCart}
-                                    className="flex-1 px-8 py-3 font-medium text-white bg-blue rounded-lg hover:bg-blue-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="flex-1 px-8 py-3 font-medium text-white bg-green-bright/90 rounded-lg hover:bg-dark-6 transition disabled:opacity-50 disabled:cursor-not-allowed"
                                     disabled={product.quantity < 1 || isAlreadyAdded}
                                 >
                                     {isAlreadyAdded
@@ -356,28 +356,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                             )}
                         </div>
 
-                        {/* Offers */}
-                        {/*{product.offers && product.offers.length > 0 && (*/}
-                        {/*    <div className="mt-6 p-4 bg-blue/5 border border-blue/20 rounded-lg">*/}
-                        {/*        <p className="text-sm font-semibold text-dark mb-3 flex items-center gap-2">*/}
-                        {/*            <svg className="w-5 h-5 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">*/}
-                        {/*                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />*/}
-                        {/*            </svg>*/}
-                        {/*            Special Offers*/}
-                        {/*        </p>*/}
-                        {/*        <ul className="space-y-2">*/}
-                        {/*            {product.offers.map((offer, index) => (*/}
-                        {/*                <li*/}
-                        {/*                    key={index}*/}
-                        {/*                    className="text-sm text-dark-4 flex items-start gap-2"*/}
-                        {/*                >*/}
-                        {/*                    <span className="text-green-600 font-bold mt-0.5">✓</span>*/}
-                        {/*                    <span>{offer}</span>*/}
-                        {/*                </li>*/}
-                        {/*            ))}*/}
-                        {/*        </ul>*/}
-                        {/*    </div>*/}
-                        {/*)}*/}
+
                     </div>
                 </div>
 
