@@ -1,29 +1,33 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
+"use client";
 
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { Category } from "@/types/category";
 
 const CustomSelect = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState({
+  const [selectedOption, setSelectedOption] = useState<{ title: string }>({
     title: "All Categories",
   });
   const [categories, setCategories] = useState<Category[]>([]);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
-  const handleOptionClick = (option: any) => {
+  const handleOptionClick = (option: Category) => {
     setSelectedOption(option);
-    toggleDropdown();
+    setIsOpen(false);
   };
 
   useEffect(() => {
-    // closing modal while clicking outside
-    function handleClickOutside(event: any) {
-      if (!event.target.closest(".dropdown-content")) {
-        setIsOpen(!isOpen);
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
       }
     }
 
@@ -33,14 +37,14 @@ const CustomSelect = () => {
 
     const fetchCategories = async () => {
       try {
-        const data = await fetch("/api/category");
-        const result = await data.json();
+        const res = await fetch("/api/category");
+        const result = await res.json();
 
         if (result?.success) {
-          setCategories(result?.data);
+          setCategories(result.data);
         }
-      } catch (error) {
-        console.log(error, "error to fetch categories");
+      } catch {
+        // intentionally silent (prod-safe)
       }
     };
 
@@ -53,28 +57,46 @@ const CustomSelect = () => {
 
   return (
     <div
+      ref={dropdownRef}
       className="dropdown-content custom-select relative"
       style={{ width: "200px" }}
     >
-      <div
-        className={`select-selected whitespace-nowrap leading-[22px] ${
+      {/* Trigger */}
+      <button
+        type="button"
+        className={`select-selected whitespace-nowrap leading-[22px] w-full text-left ${
           isOpen ? "select-arrow-active" : ""
         }`}
         onClick={toggleDropdown}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
       >
-        {selectedOption?.title}
-      </div>
-      <div className={`select-items ${isOpen ? "" : "select-hide"}`}>
-        {categories.map((option, index) => (
-          <div
-            key={index}
-            className={`select-item ${
+        {selectedOption.title}
+      </button>
+
+      {/* Dropdown */}
+      <div
+        className={`select-items ${isOpen ? "" : "select-hide"}`}
+        role="listbox"
+      >
+        {categories.map((option) => (
+          <button
+            key={String(option.slug)}
+            type="button"
+            role="option"
+            aria-selected={selectedOption === option}
+            className={`select-item w-full text-left ${
               selectedOption === option ? "same-as-selected" : ""
             }`}
             onClick={() => handleOptionClick(option)}
           >
-            <Link href={`/categories/${option.slug}`}>{option.title}</Link>
-          </div>
+            <Link
+              href={`/categories/${String(option.slug)}`}
+              className="block w-full"
+            >
+              {option.title}
+            </Link>
+          </button>
         ))}
       </div>
     </div>

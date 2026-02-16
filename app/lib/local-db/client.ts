@@ -3,14 +3,10 @@ import path from "path";
 
 const DATA_DIR = path.join(process.cwd(), "app/lib/local-db/data");
 
-/**
- * Local database client for reading JSON data files
- */
+
 export const localDB = {
   heroBanner: {
-    /**
-     * Find all hero banners
-     */
+
     async findMany(options?: {
       orderBy?: { [key: string]: "asc" | "desc" };
       include?: { [key: string]: any };
@@ -45,9 +41,7 @@ export const localDB = {
       return banners;
     },
 
-    /**
-     * Find a unique hero banner by ID
-     */
+
     async findUnique(options: { where: { id: number } }) {
       const filePath = path.join(DATA_DIR, "heroBanners.json");
       const data = await fs.readFile(filePath, "utf-8");
@@ -69,9 +63,7 @@ export const localDB = {
   },
 
   heroSlider: {
-    /**
-     * Find all hero sliders
-     */
+
     async findMany(options?: {
       orderBy?: { [key: string]: "asc" | "desc" };
       include?: { [key: string]: any };
@@ -108,9 +100,7 @@ export const localDB = {
   },
 
   category: {
-    /**
-     * Find all categories
-     */
+
     async findMany(options?: {
       orderBy?: { [key: string]: "asc" | "desc" };
       include?: { [key: string]: any };
@@ -138,9 +128,6 @@ export const localDB = {
       return categories;
     },
 
-    /**
-     * Find a unique category by ID or slug
-     */
     async findUnique(options: { where: { id?: number; slug?: string } }) {
       const filePath = path.join(DATA_DIR, "Categories.json");
       const data = await fs.readFile(filePath, "utf-8");
@@ -162,9 +149,7 @@ export const localDB = {
   },
 
   product: {
-    /**
-     * Find all products with optional filtering and ordering
-     */
+
     async findMany(options?: {
       orderBy?:
         | { [key: string]: "asc" | "desc" }
@@ -322,10 +307,6 @@ export const localDB = {
 
       return products;
     },
-
-    /**
-     * Find a unique product by ID or slug
-     */
     async findUnique(options: {
       where: { id?: string; slug?: string };
       select?: { [key: string]: any };
@@ -377,9 +358,6 @@ export const localDB = {
   },
 
   headerSetting: {
-    /**
-     * Find the first (and only) header setting
-     */
     async findFirst() {
       const filePath = path.join(DATA_DIR, "headerSettings.json");
       const data = await fs.readFile(filePath, "utf-8");
@@ -387,10 +365,6 @@ export const localDB = {
 
       return headerSetting;
     },
-
-    /**
-     * Find unique header setting by ID
-     */
     async findUnique(options: { where: { id: number } }) {
       const filePath = path.join(DATA_DIR, "headerSettings.json");
       const data = await fs.readFile(filePath, "utf-8");

@@ -1,26 +1,27 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
+
 import { Product } from "@/types/product";
 import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { AppDispatch, useAppSelector } from "@/redux/store";
 import { updateQuickView } from "@/redux/features/quickView-slice";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 import { useCart } from "@/hooks/useCart";
-
-import toast from "react-hot-toast";
+import { formatPrice } from "@/utils/formatePrice";
 
 import ActionBtn from "./ActionBtn";
-
-import { formatPrice } from "@/utils/formatePrice";
 
 const SingleItem = ({ item }: { item: Product }) => {
   const defaultVariant = item?.productVariants.find(
     (variant) => variant.isDefault,
   );
+
   const { openModal } = useModalContext();
   const dispatch = useDispatch<AppDispatch>();
   const { addItem, cartDetails } = useCart();
@@ -28,15 +29,11 @@ const SingleItem = ({ item }: { item: Product }) => {
 
   const isAlradyAdded = Object.values(cartDetails ?? {}).some(
     (cartItem) => cartItem.id === item.id,
-  )
-    ? true
-    : false;
+  );
 
   const isAlradyWishListed = Object.values(wishlistItems ?? {}).some(
     (wishlistItem) => wishlistItem.id === item.id,
-  )
-    ? true
-    : false;
+  );
 
   const cartItem = {
     id: item.id,
@@ -93,7 +90,8 @@ const SingleItem = ({ item }: { item: Product }) => {
   return (
     <div className="group">
       <div
-        className="relative overflow-hidden rounded-xl bg-[#F6F7FB]  min-h-[403px]" style={{
+        className="relative overflow-hidden rounded-xl bg-[#F6F7FB] min-h-[403px]"
+        style={{
           backgroundBlendMode: "multiply",
           backgroundImage: `url('/images/hero/pattern.svg')`,
           backgroundSize: "auto",
@@ -109,48 +107,47 @@ const SingleItem = ({ item }: { item: Product }) => {
               {formatPrice(item.discountedPrice || item.price)}
             </span>
             {item.discountedPrice && (
-              <span className="line-through text-dark-4 ">
+              <span className="line-through text-dark-4">
                 {formatPrice(item.price)}
               </span>
             )}
           </span>
         </div>
+
         <div className="flex items-center justify-center">
           <Link href={`/products/${item?.slug}`}>
             <Image
               alt={item.title || "product-image"}
-                            height={280}
-                            src={defaultVariant?.image ? defaultVariant.image : ""}
-                            width={280}
+              height={280}
+              src={defaultVariant?.image ? defaultVariant.image : ""}
+              width={280}
             />
           </Link>
         </div>
 
-        <div className="absolute right-0 bottom-0  w-full flex flex-col gap-2 p-5.5 ease-linear duration-300 group-hover:translate-x-0 translate-x-full">
+        <div className="absolute right-0 bottom-0 w-full flex flex-col gap-2 p-5.5 ease-linear duration-300 group-hover:translate-x-0 translate-x-full">
           <ActionBtn
             handleClick={handleQuickViewUpdate}
-                        icon={"quick-view"}
-                        text="Quick View"
+            icon="quick-view"
+            text="Quick View"
           />
 
           {isAlradyAdded ? (
             <ActionBtn icon="check-out" text="Checkout" />
           ) : (
             <ActionBtn
-              handleClick={() => {
-                handleAddToCart();
-              }}
-              text="Add to cart"
+              handleClick={handleAddToCart}
               icon="cart"
-              isDisabled={item.quantity < 1 ? true : false}
+              isDisabled={item.quantity < 1}
+              text="Add to cart"
             />
           )}
 
           <ActionBtn
-            handleClick={handleItemToWishList}
-            text="Add to Wishlist"
-            icon="wishlist"
             addedToWishlist={isAlradyWishListed}
+            handleClick={handleItemToWishList}
+            icon="wishlist"
+            text="Add to Wishlist"
           />
         </div>
       </div>

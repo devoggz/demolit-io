@@ -13,22 +13,22 @@ import { WishlistItem } from "@/types/wishlistItem";
 
 export default function WishlistClient() {
   const router = useRouter();
-  const dispatch = useAppDispatch(); // ✅ correct usage
-  const { addItem } = useCart(); // ✅ correct method name
+  const dispatch = useAppDispatch();
+  const { addItem } = useCart();
 
   const wishlistItems = useAppSelector(
     (state) => state.wishlistReducer.items,
   ) as WishlistItem[];
 
   const handleRemove = (id: string) => {
-    dispatch(removeItemFromWishlist(id)); // ✅ correct action
+    dispatch(removeItemFromWishlist(id));
     toast.success("Removed from wishlist");
   };
 
   const handleAddToCart = (item: WishlistItem) => {
     addItem({
       id: item.id,
-      name: item.title, // mapping title → name for cart system
+      name: item.title,
       price: item.price,
       image: item.image,
       quantity: 1,

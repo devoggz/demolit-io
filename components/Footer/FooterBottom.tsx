@@ -32,9 +32,8 @@ export default function FooterBottom() {
       <div className="px-4 mx-auto max-w-7xl sm:px-8 xl:px-0">
         <div className="flex flex-wrap items-center justify-between gap-5">
           <p className="text-sm font-normal text-dark-6">
-             All rights reserved. &copy; {year}. Kalawaks Studio.
+            All rights reserved &copy; {year} Studio Kalawaks.
           </p>
-
           <div className="flex flex-wrap items-center gap-4">
             <p className="font-normal">We Accept:</p>
 

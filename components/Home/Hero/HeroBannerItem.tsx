@@ -51,9 +51,9 @@ export default function HeroBannerItem({
         <div className="w-1/2 flex items-center justify-center">
           <Image
             alt={bannerItem?.product?.title || "Banner image"}
-                        height={210}
-                        src={bannerItem?.bannerImage}
-                        width={170}
+            height={210}
+            src={bannerItem?.bannerImage}
+            width={170}
           />
         </div>
       </div>

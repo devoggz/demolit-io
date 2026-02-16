@@ -1,40 +1,52 @@
 import { formatPrice } from "./formatePrice";
 
 export const openWhatsAppOrder = (
-  productTitle: string,
-  productPrice: number,
-  productSlug: string,
-  quantity: number = 1,
-  selectedColor?: string,
-  selectedSize?: string,
-  sku?: string,
-  phoneNumber: string = "254747896429", // Replace with your WhatsApp business number
+    productTitle: string,
+    productPrice: number,
+    productSlug: string,
+    quantity: number = 1,
+    selectedColor?: string,
+    selectedSize?: string,
+    sku?: string,
+    phoneNumber: string = "254747896429", // Replace with your WhatsApp business number
 ) => {
   const productUrl = `${window.location.origin}/products/${productSlug}`;
+  const totalPrice = productPrice * quantity;
 
-  let message = `🛍️ *New Order Request*\n\n`;
+  // Clean, professional message format
+  let message = `Hello! 👋\n\n`;
+  message += `I'm interested in ordering the following item:\n\n`;
 
-  message += `📦 *Product:* ${productTitle}\n`;
-  message += `💰 *Price:* ${formatPrice(productPrice)}\n`;
-  message += `🔢 *Quantity:* ${quantity}\n`;
+  message += `━━━━━━━━━━━━━━━━━━━\n`;
+  message += `*${productTitle}*\n`;
+  message += `━━━━━━━━━━━━━━━━━━━\n\n`;
+
+  // Product details in a cleaner format
+  const details = [];
+
+  if (sku) {
+    details.push(`SKU: ${sku}`);
+  }
 
   if (selectedColor) {
-    message += `🎨 *Color:* ${selectedColor}\n`;
+    details.push(`Color: ${selectedColor}`);
   }
 
   if (selectedSize) {
-    message += `📏 *Size:* ${selectedSize}\n`;
+    details.push(`Size: ${selectedSize}`);
   }
 
-  if (sku) {
-    message += `🏷️ *SKU:* ${sku}\n`;
-  }
+  details.push(`Quantity: ${quantity}`);
+  details.push(`Unit Price: ${formatPrice(productPrice)}`);
 
-  const totalPrice = productPrice * quantity;
+  message += details.join('\n') + '\n\n';
 
-  message += `\n💵 *Total:* ${formatPrice(totalPrice)}\n`;
-  message += `\n🔗 *Product Link:* ${productUrl}\n`;
-  message += `\n✅ I would like to place this order.`;
+  message += `━━━━━━━━━━━━━━━━━━━\n`;
+  message += `*Total: ${formatPrice(totalPrice)}*\n`;
+  message += `━━━━━━━━━━━━━━━━━━━\n\n`;
+
+  message += `Product Link:\n${productUrl}\n\n`;
+  message += `Please let me know the next steps to complete my order. Thank you! 😊`;
 
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

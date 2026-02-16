@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -18,7 +19,6 @@ import {
 import { useCart } from "@/hooks/useCart";
 import { HeaderSetting } from "@/types/header-setting";
 import { useAppSelector } from "@/redux/store";
-import {ThemeSwitch} from "@/components/theme-switch";
 
 type IProps = {
   headerData?: HeaderSetting | null;
@@ -27,10 +27,12 @@ type IProps = {
 const MainHeader = ({ headerData }: IProps) => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
-  const { handleCartClick, cartCount, totalPrice } = useCart();
-  const wishlistCount = useAppSelector((state) => state.wishlistReducer).items
-    ?.length;
+
+  const { handleCartClick, cartCount } = useCart();
+
+  const wishlistCount = useAppSelector(
+    (state) => state.wishlistReducer.items,
+  )?.length;
 
   const handleOpenCartModal = () => {
     handleCartClick();
@@ -71,8 +73,8 @@ const MainHeader = ({ headerData }: IProps) => {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 w-full z-50 bg-white transition-all  ease-in-out duration-300 ${
-          stickyMenu && "shadow-sm"
+        className={`fixed left-0 top-0 w-full z-50 bg-white transition-all ease-in-out duration-300 ${
+          stickyMenu ? "shadow-sm" : ""
         }`}
       >
         {/* Topbar */}
@@ -95,7 +97,7 @@ const MainHeader = ({ headerData }: IProps) => {
                   className="pl-3 text-sm font-medium text-white transition hover:text-blue-300"
                   href="#"
                 >
-                  {"Sign In"}
+                  Sign In
                 </Link>
               </div>
             </div>
@@ -112,26 +114,25 @@ const MainHeader = ({ headerData }: IProps) => {
                   <Image
                     priority
                     alt="Logo"
-                    height={40}
+                    height={80}
                     src={headerData?.headerLogo || "/images/logo/logo.svg"}
-                    width={120}
+                    width={160}
                   />
                 </div>
               </Link>
             </div>
 
-            {/* Desktop Menu - Hidden on mobile */}
+            {/* Desktop Menu */}
             <div className="hidden xl:block">
               <DesktopMenu menuData={menuData} stickyMenu={stickyMenu} />
             </div>
 
             {/* Action Buttons */}
             <div className="flex items-center gap-3">
-              <ThemeSwitch/>
               <button
                 aria-label="Search"
                 className="transition hover:text-green-bright focus:outline-none"
-                onClick={() => setSearchModalOpen(true)}
+                type="button"
               >
                 <SearchIcon />
               </button>
@@ -151,7 +152,7 @@ const MainHeader = ({ headerData }: IProps) => {
               >
                 <HeartIcon />
                 <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-green-bright text-[10px] font-normal rounded-full inline-flex items-center justify-center">
-                  {wishlistCount}
+                  {wishlistCount || 0}
                 </span>
               </Link>
 
@@ -159,6 +160,7 @@ const MainHeader = ({ headerData }: IProps) => {
                 aria-label="Cart"
                 className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
                 onClick={handleOpenCartModal}
+                type="button"
               >
                 <CartIcon />
                 <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-green-bright text-[10px] font-normal rounded-full inline-flex items-center justify-center">
@@ -171,6 +173,7 @@ const MainHeader = ({ headerData }: IProps) => {
                 aria-label={navigationOpen ? "Close menu" : "Open menu"}
                 className="transition xl:hidden focus:outline-none"
                 onClick={() => setNavigationOpen(!navigationOpen)}
+                type="button"
               >
                 {navigationOpen ? <CloseIcon /> : <MenuIcon />}
               </button>

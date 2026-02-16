@@ -5,11 +5,10 @@ import Image from "next/image";
 import { Category } from "@/types/category";
 
 type Props = {
-  bgClr?: string;
   item: Category;
 };
 
-const SingleItem = ({ item, bgClr = "[#F6F7FB]" }: Props) => {
+const SingleItem = ({ item }: Props) => {
   return (
     <Link href={"/shop-with-sidebar"}>
       <div className="category-item flex flex-col items-center p-4  transition-shadow rounded-lg">

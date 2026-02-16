@@ -38,6 +38,8 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
       <button
         className="flex items-center gap-2.5 text-sm"
         type="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
       >
         {selected}
@@ -50,6 +52,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
           viewBox="0 0 17 17"
           width="17"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M4.3374 6.41663L8.50407 10.5833L12.6707 6.41663"
@@ -62,17 +65,22 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
       </button>
 
       {open && (
-        <ul className="absolute z-10 w-40 p-2 mt-2 overflow-hidden text-black bg-white rounded-md shadow-lg">
+        <ul
+          className="absolute z-10 w-40 p-2 mt-2 overflow-hidden text-black bg-white rounded-md shadow-lg"
+          role="listbox"
+        >
           {options.map((option) => (
-            <li
-              key={option}
-              className="px-4 py-2 text-sm font-medium rounded-lg cursor-pointer hover:bg-gray-3 text-dark"
-              onClick={() => {
-                setSelected(option);
-                setOpen(false);
-              }}
-            >
-              {option}
+            <li key={option} role="option" aria-selected={selected === option}>
+              <button
+                type="button"
+                className="w-full px-4 py-2 text-sm font-medium text-left rounded-lg hover:bg-gray-3 text-dark"
+                onClick={() => {
+                  setSelected(option);
+                  setOpen(false);
+                }}
+              >
+                {option}
+              </button>
             </li>
           ))}
         </ul>

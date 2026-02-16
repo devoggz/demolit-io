@@ -32,7 +32,6 @@ const QuickViewModal = () => {
   const [totalRating, setTotalRating] = useState(0);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // get the product data
   const product = useAppSelector((state) => state.quickViewReducer.value);
   const [activePreview, setActivePreview] = useState(0);
 
@@ -40,7 +39,6 @@ const QuickViewModal = () => {
     (variant) => variant.isDefault,
   );
 
-  // preview modal
   const handlePreviewSlider = () => {
     dispatch(
       updateproductDetails({
@@ -51,7 +49,6 @@ const QuickViewModal = () => {
     openPreviewModal();
   };
 
-  // add to cart
   const handleAddToCart = () => {
     const cartItem = {
       id: product.id,
@@ -91,12 +88,12 @@ const QuickViewModal = () => {
       }),
     );
   };
+
   const isAlreadyInWishlist = useAppSelector((state) =>
     state.wishlistReducer.items?.some((item) => item.id === product.id),
   );
 
   useEffect(() => {
-    // closing modal while clicking outside
     function handleClickOutside(event: any) {
       if (!event.target.closest(".modal-content")) {
         closeModal();
@@ -109,7 +106,6 @@ const QuickViewModal = () => {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-
       setQuantity(1);
     };
   }, [isModalOpen, closeModal]);
@@ -134,8 +130,8 @@ const QuickViewModal = () => {
           );
           setLoading(false);
         })
-        .catch((error) => {
-          console.error("Error fetching reviews:", error);
+        .catch(() => {
+          // prod-safe: no console noise
           setLoading(false);
         });
     }
@@ -147,7 +143,7 @@ const QuickViewModal = () => {
         <div
           className={`${
             isModalOpen ? "z-99999" : "hidden"
-          } fixed top-0 left-0  overflow-y-scroll no-scrollbar max-h-[100vh] w-full sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
+          } fixed top-0 left-0 overflow-y-scroll no-scrollbar max-h-[100vh] w-full sm:py-20 xl:py-25 2xl:py-[230px] bg-dark/70 sm:px-8 px-4 py-5`}
         >
           <div className="flex items-center justify-center ">
             <div className="w-full max-w-[1100px] rounded-xl shadow-3 bg-white p-7.5 relative modal-content">
@@ -212,7 +208,7 @@ const QuickViewModal = () => {
                   {product.discountedPrice &&
                     product.discountedPrice < product.price && (
                       <span className="inline-block text-custom-xs uppercase rounded-full font-medium text-white py-1 px-3 bg-green-bright mb-6.5">
-                        sale {""}
+                        sale{" "}
                         {Math.round(
                           ((product.price - product.discountedPrice) /
                             product.price) *
@@ -231,13 +227,9 @@ const QuickViewModal = () => {
                       <p>Loading...</p>
                     ) : (
                       <div className="flex items-center gap-1.5">
-                        {/* <!-- stars --> */}
                         <ReviewStar avgRating={avgRating} />
-                        <span>
-                          <span className="text-dark-2">
-                            {" "}
-                            ( {totalRating} reviews )
-                          </span>
+                        <span className="text-dark-2">
+                          ( {totalRating} reviews )
                         </span>
                       </div>
                     )}
@@ -297,10 +289,7 @@ const QuickViewModal = () => {
                           <PlusIcon />
                         </button>
 
-                        <span
-                          className="flex items-center justify-center w-20 h-10 font-medium bg-white border rounded-lg border-gray-4 text-dark-6"
-                          x-text="quantity"
-                        >
+                        <span className="flex items-center justify-center w-20 h-10 font-medium bg-white border rounded-lg border-gray-4 text-dark-6">
                           {quantity}
                         </span>
 
@@ -322,7 +311,7 @@ const QuickViewModal = () => {
                     <button
                       className="inline-flex py-3 font-medium text-white duration-200 ease-out rounded-lg bg-green-bright px-7 hover:bg-green-bright/80"
                       disabled={quantity < 1 || product.quantity < 1}
-                      onClick={() => handleAddToCart()}
+                      onClick={handleAddToCart}
                     >
                       {product.quantity > 0 ? "Add to Cart" : "Out of Stock"}
                     </button>
@@ -330,7 +319,7 @@ const QuickViewModal = () => {
                     <button
                       className="inline-flex items-center gap-2 px-7 py-3 font-medium text-white duration-200 ease-out rounded-lg bg-dark-6 hover:bg-green-bright"
                       disabled={isAlreadyInWishlist}
-                      onClick={() => handleAddToWishlist()}
+                      onClick={handleAddToWishlist}
                     >
                       <HeartIcon />
                       {isAlreadyInWishlist

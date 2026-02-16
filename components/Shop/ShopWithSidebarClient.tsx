@@ -78,20 +78,6 @@ export default function ShopWithSidebarClient({
     setCurrentPage(1); // Reset to first page when filters change
   };
 
-  const handleSortChange = (sort: "default" | "price-asc" | "price-desc") => {
-    setSortBy(sort);
-    let sorted = [...filteredProducts];
-
-    if (sort === "price-asc") {
-      sorted.sort((a, b) => a.price - b.price);
-    } else if (sort === "price-desc") {
-      sorted.sort((a, b) => b.price - a.price);
-    }
-
-    setFilteredProducts(sorted);
-    setCurrentPage(1); // Reset to first page when sorting changes
-  };
-
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;

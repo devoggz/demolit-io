@@ -4,7 +4,6 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
-  TwitterIcon,
 } from "@/app/assets/icons/social";
 
 const socials = [

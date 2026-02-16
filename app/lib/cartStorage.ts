@@ -24,9 +24,6 @@ export const saveCartToStorage = (items: CartItem[]): void => {
   }
 };
 
-/**
- * Load cart items from localStorage
- */
 export const loadCartFromStorage = (): CartItem[] => {
   try {
     const serializedCart = localStorage.getItem(CART_STORAGE_KEY);

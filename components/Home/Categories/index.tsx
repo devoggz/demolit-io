@@ -1,12 +1,7 @@
 import { getCategories } from "@/components/get-api-data/category";
 import CategoryCarouselArea from "@/components/Home/Categories//CategoryCarouselArea";
-import { Product } from "@/types/product";
 
-interface SingleItemProps {
-  item?: Product;
-}
-
-const Categories = async ({ item }: any) => {
+const Categories = async () => {
   const categories = await getCategories();
 
   return (

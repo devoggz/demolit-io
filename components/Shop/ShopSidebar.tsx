@@ -17,11 +17,7 @@ export type FilterState = {
   sortBy: "default" | "price-asc" | "price-desc";
 };
 
-export default function ShopSidebar({
-  categories,
-  totalProducts,
-  onFilterChange,
-}: Props) {
+export default function ShopSidebar({ categories, onFilterChange }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 999]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);

@@ -21,7 +21,6 @@ interface BreadcrumbProps {
 
 const Breadcrumb = ({
   items,
-  title,
   homeLabel = "Home",
   homeHref = "/",
   separator = ">",
@@ -160,7 +159,7 @@ function generateBreadcrumbsFromPath(
   // Build up the breadcrumb items
   let currentPath = "";
 
-  pathSegments.forEach((segment, index) => {
+  pathSegments.forEach((segment) => {
     currentPath += `/${segment}`;
 
     // Format the label (capitalize, replace hyphens with spaces)

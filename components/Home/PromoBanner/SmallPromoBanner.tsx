@@ -22,7 +22,6 @@ export default function SmallPromoBanner({
   link,
   buttonText,
   rightAlign = false,
-  buttonColor = "bg-teal hover:bg-teal-dark",
   description,
 }: SmallPromoBannerProps) {
   return (
