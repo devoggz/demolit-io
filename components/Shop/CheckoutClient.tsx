@@ -144,19 +144,19 @@ export default function CheckoutClient() {
 
               {/* MPESA */}
               <button
-                type="button"
                 className={`w-full text-left mb-4 p-4 border-2 rounded-lg transition ${
                   paymentMethod === "mpesa"
                     ? "border-blue bg-blue/5"
                     : "border-gray-3 hover:border-gray-4"
                 }`}
+                type="button"
                 onClick={() => setPaymentMethod("mpesa")}
               >
                 <div className="flex items-center gap-3">
                   <input
+                    readOnly
                     checked={paymentMethod === "mpesa"}
                     type="radio"
-                    readOnly
                   />
                   <Image
                     alt="M-Pesa"
@@ -182,19 +182,19 @@ export default function CheckoutClient() {
 
               {/* CARD */}
               <button
-                type="button"
                 className={`w-full text-left p-4 border-2 rounded-lg transition ${
                   paymentMethod === "card"
                     ? "border-blue bg-blue/5"
                     : "border-gray-3 hover:border-gray-4"
                 }`}
+                type="button"
                 onClick={() => setPaymentMethod("card")}
               >
                 <div className="flex items-center gap-3">
                   <input
+                    readOnly
                     checked={paymentMethod === "card"}
                     type="radio"
-                    readOnly
                   />
                   <span className="font-semibold">Credit/Debit Card</span>
                 </div>
@@ -237,9 +237,9 @@ export default function CheckoutClient() {
             </div>
 
             <button
-              type="submit"
-              disabled={isProcessing}
               className="w-full py-4 bg-blue text-white font-semibold rounded-lg disabled:opacity-50"
+              disabled={isProcessing}
+              type="submit"
             >
               {isProcessing
                 ? "Processing..."

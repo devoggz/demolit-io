@@ -22,7 +22,7 @@ export default function ShopWithSidebarClient({
     // Sort by price (highest to lowest) by default
     [...initialProducts].sort((a, b) => b.price - a.price),
   );
-  const [sortBy, setSortBy] = useState<"default" | "price-asc" | "price-desc">(
+  const [sortBy] = useState<"default" | "price-asc" | "price-desc">(
     "price-desc",
   );
 

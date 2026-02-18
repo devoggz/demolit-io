@@ -1,10 +1,11 @@
 "use client";
 
+import type { MenuItem } from "./types";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import type { MenuItem } from "./types";
 import { CloseIcon } from "./icons";
 
 interface MobileMenuProps {
@@ -68,12 +69,12 @@ const MobileMenu = ({
     <>
       {/* Overlay */}
       <button
-        type="button"
         aria-label="Close menu overlay"
-        onClick={onClose}
         className={`fixed inset-0 bg-dark/50 z-50 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+        type="button"
+        onClick={onClose}
       />
 
       {/* Offcanvas Menu */}
@@ -99,8 +100,8 @@ const MobileMenu = ({
             <button
               aria-label="Close menu"
               className="text-gray-500 hover:text-gray-700 focus:outline-none"
-              onClick={onClose}
               type="button"
+              onClick={onClose}
             >
               <CloseIcon />
             </button>
@@ -116,8 +117,8 @@ const MobileMenu = ({
                       <div>
                         <button
                           className="flex items-center justify-between w-full px-4 py-3 text-sm text-gray-800 rounded-lg hover:text-blue text-dark hover:bg-gray-2"
-                          onClick={() => toggleSubmenu(i)}
                           type="button"
+                          onClick={() => toggleSubmenu(i)}
                         >
                           <span className="font-medium">{menuItem.title}</span>
                           <svg

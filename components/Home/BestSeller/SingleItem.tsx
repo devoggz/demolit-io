@@ -3,9 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
+
+import ActionBtn from "./ActionBtn";
 
 import { Product } from "@/types/product";
 import { useModalContext } from "@/app/context/QuickViewModalContext";
@@ -14,8 +15,6 @@ import { updateQuickView } from "@/redux/features/quickView-slice";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/utils/formatePrice";
-
-import ActionBtn from "./ActionBtn";
 
 const SingleItem = ({ item }: { item: Product }) => {
   const defaultVariant = item?.productVariants.find(

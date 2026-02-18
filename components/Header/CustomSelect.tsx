@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+
 import { Category } from "@/types/category";
 
 const CustomSelect = () => {
@@ -63,13 +64,13 @@ const CustomSelect = () => {
     >
       {/* Trigger */}
       <button
-        type="button"
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
         className={`select-selected whitespace-nowrap leading-[22px] w-full text-left ${
           isOpen ? "select-arrow-active" : ""
         }`}
+        type="button"
         onClick={toggleDropdown}
-        aria-haspopup="listbox"
-        aria-expanded={isOpen}
       >
         {selectedOption.title}
       </button>
@@ -82,17 +83,17 @@ const CustomSelect = () => {
         {categories.map((option) => (
           <button
             key={String(option.slug)}
-            type="button"
-            role="option"
             aria-selected={selectedOption === option}
             className={`select-item w-full text-left ${
               selectedOption === option ? "same-as-selected" : ""
             }`}
+            role="option"
+            type="button"
             onClick={() => handleOptionClick(option)}
           >
             <Link
-              href={`/categories/${String(option.slug)}`}
               className="block w-full"
+              href={`/categories/${String(option.slug)}`}
             >
               {option.title}
             </Link>

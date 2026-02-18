@@ -159,8 +159,8 @@ const MainHeader = ({ headerData }: IProps) => {
               <button
                 aria-label="Cart"
                 className="relative text-gray-700 transition hover:text-green-bright focus:outline-none"
-                onClick={handleOpenCartModal}
                 type="button"
+                onClick={handleOpenCartModal}
               >
                 <CartIcon />
                 <span className="absolute -top-1.5 -right-1.5 w-[18px] h-[18px] text-white bg-green-bright text-[10px] font-normal rounded-full inline-flex items-center justify-center">
@@ -172,8 +172,8 @@ const MainHeader = ({ headerData }: IProps) => {
               <button
                 aria-label={navigationOpen ? "Close menu" : "Open menu"}
                 className="transition xl:hidden focus:outline-none"
-                onClick={() => setNavigationOpen(!navigationOpen)}
                 type="button"
+                onClick={() => setNavigationOpen(!navigationOpen)}
               >
                 {navigationOpen ? <CloseIcon /> : <MenuIcon />}
               </button>

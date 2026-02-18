@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { CartItem } from "@/redux/features/cart-slice";
 
 const CART_STORAGE_KEY = "cozycommerce-cart";

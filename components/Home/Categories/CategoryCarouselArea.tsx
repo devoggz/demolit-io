@@ -5,11 +5,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import SingleItem from "./SingleItem";
-import { ChevronLeftIcon, ChevronRightIcon } from "@/app/assets/icons";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@/app/assets/icons";
 import "swiper/css";
 import "swiper/css/navigation";
-
 import { Category } from "@/types/category";
 
 export default function CategoryCarouselArea({

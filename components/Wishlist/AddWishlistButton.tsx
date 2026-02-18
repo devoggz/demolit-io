@@ -25,32 +25,32 @@ const WishlistButton = ({ item, handleItemToWishList }: IProps) => {
   }
 
   const isAlreadyWishListed = wishlistItems.some(
-      (wishlistItem) => wishlistItem.id === item.id,
+    (wishlistItem) => wishlistItem.id === item.id,
   );
 
   return (
-      <Tooltip content="Wishlist" placement="top">
-        {/* Changed button to div to avoid nested button issue */}
-        <div
-            role="button"
-            tabIndex={0}
-            aria-label="button for favorite select"
-            className="flex items-center justify-center duration-200 h-[38px] w-[38px] ease-out bg-white border rounded-lg border-gray-3 text-dark-6 hover:text-green-bright cursor-pointer"
-            onClick={handleItemToWishList}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleItemToWishList();
-              }
-            }}
-        >
-          {isAlreadyWishListed ? (
-              <HeartSolid />
-          ) : (
-              <HeartIcon height={16} width={16} />
-          )}
-        </div>
-      </Tooltip>
+    <Tooltip content="Wishlist" placement="top">
+      {/* Changed button to div to avoid nested button issue */}
+      <div
+        aria-label="button for favorite select"
+        className="flex items-center justify-center duration-200 h-[38px] w-[38px] ease-out bg-white border rounded-lg border-gray-3 text-dark-6 hover:text-green-bright cursor-pointer"
+        role="button"
+        tabIndex={0}
+        onClick={handleItemToWishList}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleItemToWishList();
+          }
+        }}
+      >
+        {isAlreadyWishListed ? (
+          <HeartSolid />
+        ) : (
+          <HeartIcon height={16} width={16} />
+        )}
+      </div>
+    </Tooltip>
   );
 };
 

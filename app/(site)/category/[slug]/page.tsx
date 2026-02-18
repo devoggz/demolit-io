@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllProducts } from "@/components/get-api-data/product";
 import { getCategories } from "@/components/get-api-data/category";
 import ProductItem from "@/components/Common/ProductItem";
-import ShopSidebar, { FilterState } from "@/components/Shop/ShopSidebar";
+import ShopSidebar from "@/components/Shop/ShopSidebar";
 
 export default async function CategoryPage({
   params,
@@ -45,7 +45,7 @@ export default async function CategoryPage({
             <ShopSidebar
               categories={categories}
               totalProducts={categoryProducts.length}
-              onFilterChange={function (filters: FilterState): void {
+              onFilterChange={function (): void {
                 throw new Error("Function not implemented.");
               }}
             />

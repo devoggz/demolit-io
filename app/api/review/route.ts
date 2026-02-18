@@ -11,8 +11,7 @@ export async function POST(req: NextRequest) {
 
     // Filter reviews by productSlug and isApproved
     const reviews = allReviews.filter(
-      (review: any) =>
-        review.productSlug === productSlug && review.isApproved === true,
+      (review: any) => review.productSlug === productSlug && review.isApproved,
     );
 
     if (!reviews || reviews.length === 0) {
@@ -23,9 +22,8 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ review: reviews }, { status: 200 });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (err) {
-    console.error("Error reading reviews:", err);
-
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 },

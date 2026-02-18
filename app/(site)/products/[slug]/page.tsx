@@ -20,6 +20,7 @@ export default async function ProductPage({
     ...product,
     slug:
       typeof product.slug === "string" ? product.slug : String(product.slug),
+    body: product.body ?? undefined, // Convert null to undefined
     discountedPrice: product.discountedPrice ?? undefined, // Convert null to undefined
     updatedAt:
       typeof product.updatedAt === "string"

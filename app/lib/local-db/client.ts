@@ -3,10 +3,8 @@ import path from "path";
 
 const DATA_DIR = path.join(process.cwd(), "app/lib/local-db/data");
 
-
 export const localDB = {
   heroBanner: {
-
     async findMany(options?: {
       orderBy?: { [key: string]: "asc" | "desc" };
       include?: { [key: string]: any };
@@ -40,8 +38,6 @@ export const localDB = {
 
       return banners;
     },
-
-
     async findUnique(options: { where: { id: number } }) {
       const filePath = path.join(DATA_DIR, "heroBanners.json");
       const data = await fs.readFile(filePath, "utf-8");
@@ -61,9 +57,7 @@ export const localDB = {
       };
     },
   },
-
   heroSlider: {
-
     async findMany(options?: {
       orderBy?: { [key: string]: "asc" | "desc" };
       include?: { [key: string]: any };
@@ -100,7 +94,6 @@ export const localDB = {
   },
 
   category: {
-
     async findMany(options?: {
       orderBy?: { [key: string]: "asc" | "desc" };
       include?: { [key: string]: any };
@@ -127,7 +120,6 @@ export const localDB = {
 
       return categories;
     },
-
     async findUnique(options: { where: { id?: number; slug?: string } }) {
       const filePath = path.join(DATA_DIR, "Categories.json");
       const data = await fs.readFile(filePath, "utf-8");
@@ -149,7 +141,6 @@ export const localDB = {
   },
 
   product: {
-
     async findMany(options?: {
       orderBy?:
         | { [key: string]: "asc" | "desc" }
