@@ -1,14 +1,14 @@
 import { formatPrice } from "./formatePrice";
 
 export const openWhatsAppOrder = (
-    productTitle: string,
-    productPrice: number,
-    productSlug: string,
-    quantity: number = 1,
-    selectedColor?: string,
-    selectedSize?: string,
-    sku?: string,
-    phoneNumber: string = "254747896429", // Replace with your WhatsApp business number
+  productTitle: string,
+  productPrice: number,
+  productSlug: string,
+  quantity: number = 1,
+  selectedColor?: string,
+  selectedSize?: string,
+  sku?: string,
+  phoneNumber: string = "254747896429", // Replace with your WhatsApp business number
 ) => {
   const productUrl = `${window.location.origin}/products/${productSlug}`;
   const totalPrice = productPrice * quantity;
@@ -39,7 +39,7 @@ export const openWhatsAppOrder = (
   details.push(`Quantity: ${quantity}`);
   details.push(`Unit Price: ${formatPrice(productPrice)}`);
 
-  message += details.join('\n') + '\n\n';
+  message += details.join("\n") + "\n\n";
 
   message += `━━━━━━━━━━━━━━━━━━━\n`;
   message += `*Total: ${formatPrice(totalPrice)}*\n`;
